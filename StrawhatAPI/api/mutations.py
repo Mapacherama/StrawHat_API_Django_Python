@@ -1,18 +1,24 @@
-from ariadne import convert_kwargs_to_snake_case
+# mutations.py
 from api import db
 from api.models import OnePieceCharacter
 
 
-@convert_kwargs_to_snake_case
-def create_character_resolver(obj, name, crew, devilFruit):
+def create_character_resolver(obj, info, devilfruit, name, crew):
     try:
+        print(devilfruit)
         character = OnePieceCharacter(name=name,
                                       crew=crew,
-                                      devilFruit=devilFruit)
+                                      devilfruit=devilfruit)
         db.session.add(character)
         db.session.commit()
-
-        payload = {"success": True, "post": character.to_dict()}
+        payload = {"success": True, "character": character}
     except ValueError:  # date format errors
-        payload = {"success": False, "errors": [f"Incorrect input provided"]}
+        payload = {
+            "success":
+            False,
+            "errors": [
+                f"Incorrect date format provided. Date should be in "
+                f"the format dd-mm-yyyy"
+            ]
+        }
     return payload

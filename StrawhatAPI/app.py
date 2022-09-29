@@ -1,17 +1,22 @@
-from api import app, db
 from ariadne import load_schema_from_path, make_executable_schema, \
     graphql_sync, snake_case_fallback_resolvers, ObjectType
 from ariadne.constants import PLAYGROUND_HTML
 from flask import request, jsonify
+
+#API Related imports
+from api import app, db
 from api.queries import listOnePieceCharacters_resolver
 from api.queries import getSingleCharacter_resolver
 from api.mutations import create_character_resolver
 
+#Data management
 query = ObjectType("Query")
 mutation = ObjectType("Mutation")
+
+#Setting fields
 query.set_field("listCharacters", listOnePieceCharacters_resolver)
 query.set_field("getCharacter", getSingleCharacter_resolver)
-query.set_field("createCharacter", create_character_resolver)
+mutation.set_field("createOnePieceCharacter", create_character_resolver)
 
 type_defs = load_schema_from_path("schema.graphql")
 schema = make_executable_schema(type_defs, query, mutation,

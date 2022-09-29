@@ -7,7 +7,7 @@ type OnePieceCharacter {
   id: ID!
   name: String!
   crew: String!
-  devilFruit: String!
+  devilfruit: String!
 }
 
 type OnePieceCharacterResult {
@@ -28,9 +28,9 @@ type Query {
 }
 
 type Mutation {
-  createPost(
+  createOnePieceCharacter(
     name: String!
     crew: String!
-    devilFruit: String
+    devilfruit: String!
   ): OnePieceCharacterResult!
 }

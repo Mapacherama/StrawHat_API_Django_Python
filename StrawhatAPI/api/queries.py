@@ -18,7 +18,6 @@ def listOnePieceCharacters_resolver(obj, info):
 def getSingleCharacter_resolver(obj, info, id):
     try:
         character = OnePieceCharacter.query.get(id)
-        print(character)
         payload = {"success": True, "character": character}
     except AttributeError:  # todo not found
         payload = {
