@@ -12,10 +12,16 @@ type OnePieceCharacter {
 type OnePieceCharacterResult {
   success: Boolean!
   errors: [String]
+  character: OnePieceCharacter
+}
+
+type OnePieceCharactersResult {
+  success: Boolean!
+  errors: [String]
   onepiececharacters: [OnePieceCharacter]
 }
 
 type Query {
-  listCharacters: OnePieceCharacterResult!
+  listCharacters: OnePieceCharactersResult!
   getCharacter(id: ID!): OnePieceCharacterResult!
 }

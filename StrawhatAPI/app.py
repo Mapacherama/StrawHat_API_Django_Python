@@ -4,9 +4,11 @@ from ariadne import load_schema_from_path, make_executable_schema, \
 from ariadne.constants import PLAYGROUND_HTML
 from flask import request, jsonify
 from api.queries import listOnePieceCharacters_resolver
+from api.queries import getSingleCharacter_resolver
 
 query = ObjectType("Query")
 query.set_field("listCharacters", listOnePieceCharacters_resolver)
+query.set_field("getCharacter", getSingleCharacter_resolver)
 
 type_defs = load_schema_from_path("schema.graphql")
 schema = make_executable_schema(type_defs, query,
