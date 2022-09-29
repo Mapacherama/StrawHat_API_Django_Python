@@ -1,5 +1,6 @@
 schema {
   query: Query
+  mutation: Mutation
 }
 
 type OnePieceCharacter {
@@ -24,4 +25,12 @@ type OnePieceCharactersResult {
 type Query {
   listCharacters: OnePieceCharactersResult!
   getCharacter(id: ID!): OnePieceCharacterResult!
+}
+
+type Mutation {
+  createPost(
+    name: String!
+    crew: String!
+    devilFruit: String
+  ): OnePieceCharacterResult!
 }

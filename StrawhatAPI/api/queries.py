@@ -1,4 +1,5 @@
 from .models import OnePieceCharacter
+from ariadne import convert_kwargs_to_snake_case
 
 
 def listOnePieceCharacters_resolver(obj, info):
@@ -13,6 +14,7 @@ def listOnePieceCharacters_resolver(obj, info):
     return payload
 
 
+@convert_kwargs_to_snake_case
 def getSingleCharacter_resolver(obj, info, id):
     try:
         character = OnePieceCharacter.query.get(id)
