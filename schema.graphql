@@ -12,7 +12,7 @@ type OnePieceCharacter {
 type OnePieceCharacterResult {
   success: Boolean!
   errors: [String]
-  onePieceCharacter: [OnePieceCharacter]
+  onepiececharacters: [OnePieceCharacter]
 }
 
 type Query {

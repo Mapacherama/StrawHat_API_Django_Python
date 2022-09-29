@@ -10,7 +10,7 @@ class OnePieceCharacter(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "title": self.name,
-            "description": self.crew,
-            "created_at": str(self.devilFruit)
+            "name": self.name,
+            "crew": self.crew,
+            "devilFruit": self.devilFruit
         }
