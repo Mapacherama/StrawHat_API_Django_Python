@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 app.config[
-    "SQLALCHEMY_DATABASE_URI"] = "postgresql://tyke.db.elephantsql.com:5432/zalicbcw"
+    "SQLALCHEMY_DATABASE_URI"] = "postgresql://zalicbcw:SJ3D7ntKUSX9h_pm9aQ2dDjbyBepb-DX@tyke.db.elephantsql.com/zalicbcw"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 

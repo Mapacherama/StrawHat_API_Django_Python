@@ -1,0 +1,21 @@
+schema {
+  query: Query
+}
+
+type OnePieceCharacter {
+  id: ID!
+  name: String!
+  crew: String!
+  devilFruit: String!
+}
+
+type OnePieceCharacterResult {
+  success: Boolean!
+  errors: [String]
+  onePieceCharacter: [OnePieceCharacter]
+}
+
+type Query {
+  listCharacters: OnePieceCharacterResult!
+  getCharacter(id: ID!): OnePieceCharacterResult!
+}
