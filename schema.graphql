@@ -8,6 +8,8 @@ type OnePieceCharacter {
   name: String!
   crew: String!
   devilfruit: String!
+  residence: String!
+  bounty: Int!
 }
 
 type OnePieceCharacterResult {
@@ -32,12 +34,17 @@ type Mutation {
     name: String!
     crew: String!
     devilfruit: String!
+    residence: String!
+    bounty: Int!
   ): OnePieceCharacterResult!
 
-  updateOnePieceCharacter(id: ID!,
+  updateOnePieceCharacter(
+    id: ID!,
     name: String!
     crew: String!
     devilfruit: String!
+    Residence: String!
+    bounty: Int!
   ): OnePieceCharacterResult!
   deleteOnePieceCharacter(id: ID): OnePieceCharacterResult!
 }
