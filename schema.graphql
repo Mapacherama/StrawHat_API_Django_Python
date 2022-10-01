@@ -12,6 +12,14 @@ type OnePieceCharacter {
   bounty: Int!
 }
 
+type Residence {
+  id: ID!
+  region: String!
+  kingdom: String!
+  type: String!
+  population: Int!
+}
+
 type OnePieceCharacterResult {
   success: Boolean!
   errors: [String]

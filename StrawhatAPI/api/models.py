@@ -30,5 +30,5 @@ class Residence(db.Model):
             "region": self.region,
             "kingdom": self.kingdom,
             "type": self.type,
-            "population": self.population            
+            "population": self.population
         }
