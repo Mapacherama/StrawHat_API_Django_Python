@@ -33,4 +33,10 @@ type Mutation {
     crew: String!
     devilfruit: String!
   ): OnePieceCharacterResult!
+
+  updateOnePieceCharacter(id: ID!,
+    name: String!
+    crew: String!
+    devilfruit: String!
+  ): OnePieceCharacterResult!
 }
