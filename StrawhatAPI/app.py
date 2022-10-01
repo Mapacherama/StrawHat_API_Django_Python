@@ -7,8 +7,7 @@ from flask import request, jsonify
 from api import app, db
 from api.queries import listOnePieceCharacters_resolver
 from api.queries import getSingleCharacter_resolver
-from api.mutations import create_character_resolver
-from api.mutations import update_character_resolver
+from api.mutations import create_character_resolver, update_character_resolver, delete_character_resolver
 
 #Data management
 query = ObjectType("Query")
@@ -20,6 +19,8 @@ query.set_field("getCharacter", getSingleCharacter_resolver)
 
 mutation.set_field("createOnePieceCharacter", create_character_resolver)
 mutation.set_field("updateOnePieceCharacter", update_character_resolver)
+mutation.set_field("deleteOnePieceCharacter", delete_character_resolver)
+
 
 type_defs = load_schema_from_path("schema.graphql")
 schema = make_executable_schema(type_defs, query, mutation,

@@ -39,4 +39,5 @@ type Mutation {
     crew: String!
     devilfruit: String!
   ): OnePieceCharacterResult!
+  deleteOnePieceCharacter(id: ID): OnePieceCharacterResult!
 }

@@ -1,9 +1,9 @@
 from app import db
 class OnePieceCharacter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    crew = db.Column(db.String)
-    devilfruit = db.Column(db.String)
+    name = db.Column(db.String(255))
+    crew = db.Column(db.String(255))
+    devilfruit = db.Column(db.String(255))
 
     def to_dict(self):
         return {
