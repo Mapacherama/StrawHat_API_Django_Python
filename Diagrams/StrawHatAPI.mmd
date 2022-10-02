@@ -1,7 +1,9 @@
 classDiagram
     OnePieceCharacter  "1" --> "1" Origin:Born in 
     OnePieceCharacter "1" --> "1" Crew
+    OnePieceCharacter "1" --> "1" PirateFleet
     OnePieceCharacter "1" --> "0..*" DevilFruit  
+    DevilFruit "1" --> "1" DevilFruitType
     
     class OnePieceCharacter{
       +String Name
@@ -20,9 +22,15 @@ classDiagram
 
     class DevilFruit{
       +String Name
-      +String Meaning
-      +String Type      
-    }    
+      +String Meaning           
+    }  
+
+    class DevilFruitType {
+    <<enumeration>>
+      Paramecia
+      Zoan
+      Logia
+    }
     
     class Origin{
       +String Name      
@@ -35,6 +43,12 @@ classDiagram
       +String Captain
       +String MainShip
       +int TotalBounty
+    }
+
+    class PirateFleet {
+    +String Name
+    +String Captain
+    +int TotalBounty
     }
 
     
