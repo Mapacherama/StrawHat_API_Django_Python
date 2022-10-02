@@ -1,0 +1,41 @@
+classDiagram
+    OnePieceCharacter  "1" --> "1" Origin:Born in 
+    OnePieceCharacter "1" --> "1" Crew
+    OnePieceCharacter "1" --> "0..*" DevilFruit  
+    
+    class OnePieceCharacter{
+      +String Name
+      +String OceanOfOrigin
+      +String BloodType
+      +String Occupation
+      +String NickName
+      +bool IsAlive
+      +bool HasDevilFruit
+      +int Bounty
+      +int Age
+      +int Height
+      +Date BirthDay
+      +eat(DevilFruit)
+    }  
+
+    class DevilFruit{
+      +String Name
+      +String Meaning
+      +String Type      
+    }    
+    
+    class Origin{
+      +String Name      
+      +bool isKingdom           
+    }
+        
+    class Crew {
+      +String Name
+      +String OceanOfOrigin
+      +String Captain
+      +String MainShip
+      +int TotalBounty
+    }
+
+    
+     
