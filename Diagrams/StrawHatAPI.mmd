@@ -1,18 +1,18 @@
 classDiagram
-    OnePieceCharacter  "1" --> "1" Origin:Born in 
-    OnePieceCharacter "1" --> "1" Crew
-    OnePieceCharacter "1" --> "1" PirateFleet
-    OnePieceCharacter "1" --> "0..*" DevilFruit  
-    DevilFruit "1" --> "1" DevilFruitType
+    OnePieceCharacter  "1" --> "1" Origin: Born in 
+    OnePieceCharacter "1" --> "1" Crew: Part of
+    OnePieceCharacter "1" --> "1" PirateFleet: Serves in
+    OnePieceCharacter "1" --> "0..*" DevilFruit: Has eaten 
+    DevilFruit "1" --> "1" DevilFruitType : Is Type of
     
     class OnePieceCharacter{
       +String Name
-      +String OceanOfOrigin
       +String BloodType
       +String Occupation
       +String NickName
       +bool IsAlive
       +bool HasDevilFruit
+      +bool IsPartOfFleet
       +int Bounty
       +int Age
       +int Height
@@ -48,6 +48,7 @@ classDiagram
     class PirateFleet {
     +String Name
     +String Captain
+    +int TotalPeople
     +int TotalBounty
     }
 
