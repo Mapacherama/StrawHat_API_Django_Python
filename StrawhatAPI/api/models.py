@@ -5,10 +5,14 @@ from sqlalchemy import Integer, Enum
 class OnePieceCharacter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-    crew = db.Column(db.String(255))
+    bloodType = db.Column(db.String(255))
+    occupation = db.Column(db.String(255))
+    nickName = db.Column(db.String(255))
+
     devilfruit = db.Column(db.String(255))
-    # request_id = db.Column(db.Integer, )
     origin = db.Column(db.String(255), db.ForeignKey('origin.id'))
+    crew = db.Column(db.String(255), db.ForeignKey('crew.id'))
+    piratefleet = db.Column(db.String(255), db.ForeignKey('crew.id'))
     bounty = db.Column(db.Integer)
 
     def to_dict(self):
@@ -32,6 +36,44 @@ class Origin(db.Model):
             "name": self.name,
             "haskingdom": self.hasKingdom
         }
+
+#Crew
+class Crew(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    oceanOfOrigin = db.Column(db.String(255))
+    captain = db.Column(db.String(255))
+    mainShip = db.Column(db.String(255))
+    totalBounty = db.Column(db.Integer)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "oceanoforigin": self.oceanOfOrigin,
+            "captain": self.captain,
+            "mainship": self.mainShip,
+            "totalBount": self.totalBounty
+        }
+
+#Piratefleet
+class PirateFleet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    captain = db.Column(db.String(255))
+    totalBounty = db.Column(db.Integer)
+    totalBounty = db.Column(db.Integer)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "oceanoforigin": self.oceanOfOrigin,
+            "captain": self.captain,
+            "mainship": self.mainShip,
+            "totalBount": self.totalBounty
+        }
+
 
 #Devilfruit stuff
 class DevilFruit(db.Model):
