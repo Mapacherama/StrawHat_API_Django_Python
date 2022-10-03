@@ -87,17 +87,17 @@ def create_character_resolver(obj, info, region, kingdom,  type, population):
 @convert_kwargs_to_snake_case
 def update_character_resolver(obj, info, id, region, kingdom,  type, population):
     try:
-        residence = Residence.query.get(id)
-        if residence:
-            residence.region = region
-            residence.kingdom = kingdom
-            residence.type = type
-            residence.population = population
-        db.session.add(residence)
+        origin = Residence.query.get(id)
+        if origin:
+            origin.region = region
+            origin.kingdom = kingdom
+            origin.type = type
+            origin.population = population
+        db.session.add(origin)
         db.session.commit()
         payload = {
             "success": True,
-            "character": residence.to_dict()
+            "character": origin.to_dict()
         }
     except AttributeError:  # todo not found
         payload = {
