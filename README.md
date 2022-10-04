@@ -1,4 +1,4 @@
-# StrawHat_API_Django_Python
+# StrawHat API. Made possible with GraphQL, SQLAlchemy, Flask & Python
 
 ![](https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/One_Piece_Logo.svg/800px-One_Piece_Logo.svg.png)
 
