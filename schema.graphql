@@ -12,15 +12,24 @@ type OnePieceCharacter {
   bounty: Int!
 }
 
-type Residence {
+type Origin {
   id: ID!
-  region: String!
-  kingdom: String!
-  type: String!
-  population: Int!
+  name: String!
+  isKingdom: Boolean!
 }
 
-type OnePieceCharacterResult {
+type Crew {
+  id: ID!
+  name: String!
+  oceanOfOrigin: String!
+  captain: String!
+  mainShip: String!
+  totalBounty: Int!
+}
+
+# For mutation related stuff.
+
+type OnePieceCharacterResult { #Better naming convention (?)
   success: Boolean!
   errors: [String]
   character: OnePieceCharacter
