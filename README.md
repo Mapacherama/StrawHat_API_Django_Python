@@ -7,3 +7,4 @@ That's why I decided to make this API, to gain more knowledge about programming 
 gain more knowledge about the incredible world Oda has created!
 
 
+![](https://raw.githubusercontent.com/Mapacherama/StrawHat_API_GraphQL_Python/main/Diagrams/PirateClassDiagram.png)
