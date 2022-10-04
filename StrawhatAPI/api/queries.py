@@ -1,4 +1,4 @@
-from .models import OnePieceCharacter
+from .models import OnePieceCharacter, Origin
 from ariadne import convert_kwargs_to_snake_case
 
 @convert_kwargs_to_snake_case
@@ -25,14 +25,18 @@ def getSingleCharacter_resolver(obj, info, id):
             "errors": ["Character item matching {id} not found"]
         }
     return payload
+
+# query = Skill.get_query(info=info)
 @convert_kwargs_to_snake_case
-def listResidence_resolver(obj, info):
+def listOrigin_resolver(obj, info):
+    query = Origin.get_query(info=info)
+    query = query.filter(OnePieceCharacter.origin_id == obj.id)
     try:
-        onePieceCharacters = [
-            residence for residence in Residence.query.all()
+        origins = [
+            origin for origin in Origin.query.all()
         ]
-        print(onePieceCharacters)
-        payload = {"success": True, "recidences": onePieceCharacters}
+
+        payload = {"success": True, "origins": origins}
     except Exception as error:
         payload = {"success": False, "errors": [str(error)]}
     return payload
