@@ -3,13 +3,9 @@ from enum import Enum
 from sqlalchemy import Integer, Enum, Boolean
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import case
-#https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#one-to-one
 
-# origin = db.Column(db.String(255), db.ForeignKey('origin.id'))
-    # crew = db.Column(db.String(255), db.ForeignKey('crew.id'))
-    # piratefleet = db.Column(db.String(255), db.ForeignKey('crew.id'))
 class OnePieceCharacter(db.Model):
-    __table_args__ = {'extend_existing': True}
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     bloodType = db.Column(db.String(255))
@@ -23,6 +19,14 @@ class OnePieceCharacter(db.Model):
     age = db.Column(db.Integer)
     height = db.Column(db.Integer)
     birthday = db.Column(db.Date)
+    origin_id = db.Column(db.Integer, db.ForeignKey("Origin.id"))
+    origin = db.relationship("Origin")
+    crew_id = db.Column(db.Integer, db.ForeignKey("Crew.id"))
+    crew = db.relationship("Crew")
+    piratefleet_id = db.Column(db.Integer, db.ForeignKey("PirateFleet.id"))
+    piratefleet = db.relationship("PirateFleet")
+    devilfruit_id = db.Column(db.Integer, db.ForeignKey("DevilFruit.id"))
+    devilfruit = db.relationship("DevilFruit")
 
     def to_dict(self):
         return {
@@ -40,11 +44,11 @@ class OnePieceCharacter(db.Model):
 # Place of origin
 
 class Origin(db.Model):
-    __table_args__ = {'extend_existing': True}
+    __tablename__ = "Origin"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     hasKingdom = db.Column(Boolean, unique=False, default=True)
-    # parent = relationship("OnePieceCharacter", back_populates="Origin")
+    characters = db.relationship("OnePieceCharacter")
 
     def to_dict(self):
         return {
@@ -55,13 +59,14 @@ class Origin(db.Model):
 #Crew
 
 class Crew(db.Model):
-    __table_args__ = {'extend_existing': True}
+    __tablename__ = "Crew"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     oceanOfOrigin = db.Column(db.String(255))
     captain = db.Column(db.String(255))
     mainShip = db.Column(db.String(255))
     totalBounty = db.Column(db.Integer)
+    characters = db.relationship("OnePieceCharacter")
 
 
     def to_dict(self):
@@ -77,12 +82,13 @@ class Crew(db.Model):
 #Piratefleet
 
 class PirateFleet(db.Model):
-    __table_args__ = {'extend_existing': True}
+    __tablename__ = "PirateFleet"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     captain = db.Column(db.String(255))
     totalPeople = db.Column(db.Integer)
     totalBounty = db.Column(db.Integer)
+    characters = db.relationship("OnePieceCharacter")
 
 
     def to_dict(self):
@@ -98,7 +104,7 @@ class PirateFleet(db.Model):
 #Devilfruit stuff
 
 class DevilFruit(db.Model):
-    __table_args__ = {'extend_existing': True}
+    __tablename__ = "DevilFruit"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     definition = db.Column(db.String(255))
@@ -120,7 +126,6 @@ class DevilFruitTypes(Enum):
         LOGIA = 3
 
 class DevilFruitTypes(db.Model):
-    __devilfruittype__ = 'devilfruittype'
     id = db.Column(Integer, primary_key=True)
     value = db.Column(Enum("paramecia", "zoan", "logia", name="ValueTypes"), default = "zoan")
 

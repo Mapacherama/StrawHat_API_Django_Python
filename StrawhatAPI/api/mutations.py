@@ -1,6 +1,6 @@
 # mutations.py
 from api import db
-from api.models import OnePieceCharacter
+from api.models import OnePieceCharacter, Origin
 from ariadne import convert_kwargs_to_snake_case
 # Character
 @convert_kwargs_to_snake_case
@@ -113,6 +113,22 @@ def delete_character_resolver(obj, info, id):
         db.session.delete(residence)
         db.session.commit()
         payload = {"success": True,"character": residence.to_dict()}
+    except AttributeError:
+        payload = {
+            "success": False,
+            "errors": ["Not found"]
+        }
+    return payload
+
+#Origin
+
+@convert_kwargs_to_snake_case
+def delete_character_resolver(obj, info, id):
+    try:
+        origin = Origin.query.get(id)
+        db.session.delete(origin)
+        db.session.commit()
+        payload = {"success": True,"character": origin.to_dict()}
     except AttributeError:
         payload = {
             "success": False,

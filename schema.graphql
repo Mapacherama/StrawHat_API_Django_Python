@@ -6,10 +6,16 @@ schema {
 type OnePieceCharacter {
   id: ID!
   name: String!
-  crew: String!
-  devilfruit: String!
-  residence: String!
+  bloodType: String!
+  occupation: String!
+  nickName: String!
+  isAlive: Boolean!
+  isPartOfFleet: Boolean!
   bounty: Int!
+  age: Int!
+  height: Int!
+  Origin: Origin!
+  crew: Crew!
 }
 
 type Origin {
@@ -29,6 +35,8 @@ type Crew {
 
 # For mutation related stuff.
 
+#OnePieceCharacter
+
 type OnePieceCharacterResult { #Better naming convention (?)
   success: Boolean!
   errors: [String]
@@ -41,9 +49,26 @@ type OnePieceCharactersResult {
   onepiececharacters: [OnePieceCharacter]
 }
 
+#Origin
+
+type SingleOriginResult {
+  success: Boolean!
+  errors: [String]
+  origin: Origin
+}
+
+type MultipleOriginsResult {
+  success: Boolean!
+  errors: [String]
+  origin: [Origin]
+}
+
+
 type Query {
   listCharacters: OnePieceCharactersResult!
   getCharacter(id: ID!): OnePieceCharacterResult!
+  listCountryOfOrigins: SingleOriginResult!
+  getCountryOfOrigin(id: ID!): MultipleOriginsResult!
 }
 
 type Mutation {
@@ -62,6 +87,24 @@ type Mutation {
     devilfruit: String!
     Residence: String!
     bounty: Int!
-  ): OnePieceCharacterResult!
-  deleteOnePieceCharacter(id: ID): OnePieceCharacterResult!
+  ): SingleOriginResult!
+  deleteOnePieceCharacter(id: ID): SingleOriginResult!
+
+    createCountryOfOrigin(
+    name: String!
+    crew: String!
+    devilfruit: String!
+    residence: String!
+    bounty: Int!
+  ): SingleOriginResult!
+
+  updateCountryOfOrigin(
+    id: ID!,
+    name: String!
+    crew: String!
+    devilfruit: String!
+    Residence: String!
+    bounty: Int!
+  ): SingleOriginResult!
+  deleteCountryOfOrigin(id: ID): SingleOriginResult!
 }
