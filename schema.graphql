@@ -6,16 +6,15 @@ schema {
 type OnePieceCharacter {
   id: ID!
   name: String!
-  bloodType: String!
+  bloodtype: String!
   occupation: String!
-  nickName: String!
-  isAlive: Boolean!
-  isPartOfFleet: Boolean!
+  nickname: String!
+  isalive: Boolean!
+  ispartoffleet: Boolean!
   bounty: Int!
   age: Int!
   height: Int!
-  Origin: Origin!
-  crew: Crew!
+  Origin: SingleOriginResult
 }
 
 type Origin {
@@ -67,8 +66,7 @@ type MultipleOriginsResult {
 type Query {
   listCharacters: OnePieceCharactersResult!
   getCharacter(id: ID!): OnePieceCharacterResult!
-  listCountryOfOrigins: SingleOriginResult!
-  getCountryOfOrigin(id: ID!): MultipleOriginsResult!
+  listOrigins: MultipleOriginsResult!
 }
 
 type Mutation {

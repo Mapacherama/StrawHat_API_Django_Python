@@ -8,36 +8,38 @@ class OnePieceCharacter(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-    bloodType = db.Column(db.String(255))
+    bloodtype = db.Column(db.String(255))
     occupation = db.Column(db.String(255))
-    nickName = db.Column(db.String(255))
+    nickname = db.Column(db.String(255))
     devilfruit = db.Column(db.String(255))
-    isAlive = db.Column(db.Boolean)
-    hasDevilFruit = db.Column(db.Boolean)
-    isPartOfFleet = db.Column(db.Boolean)
+    isalive = db.Column(db.Boolean)
+    hasdevilFruit = db.Column(db.Boolean)
+    ispartOffleet = db.Column(db.Boolean)
     bounty = db.Column(db.Integer)
     age = db.Column(db.Integer)
     height = db.Column(db.Integer)
     birthday = db.Column(db.Date)
     origin_id = db.Column(db.Integer, db.ForeignKey("Origin.id"))
-    origin = db.relationship("Origin")
-    crew_id = db.Column(db.Integer, db.ForeignKey("Crew.id"))
-    crew = db.relationship("Crew")
-    piratefleet_id = db.Column(db.Integer, db.ForeignKey("PirateFleet.id"))
-    piratefleet = db.relationship("PirateFleet")
-    devilfruit_id = db.Column(db.Integer, db.ForeignKey("DevilFruit.id"))
-    devilfruit = db.relationship("DevilFruit")
+    # crew_id = db.Column(db.Integer, db.ForeignKey("Crew.id"))
+    # piratefleet_id = db.Column(db.Integer, db.ForeignKey("PirateFleet.id"))
+    # devilfruit_id = db.Column(db.Integer, db.ForeignKey("DevilFruit.id"))
 
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
-            "bloodtype": self.bloodType,
+            "bloodtype": self.bloodtype,
             "occupation": self.occupation,
-            "nickName": self.nickName,
+            "nickname": self.nickname,
             "devilfruit": self.devilfruit,
+            "isalive": self.isalive,
+            "hasdevilfruit": self.hasdevilFruit,
+            "ispartoffleet": self.ispartOffleet,
+            "bounty": self.bounty,
+            "age": self.age,
+            "height": self.height,
+            "birthday": self.birthday,
             "origin": self.origin,
-            "crew": self.crew,
             "piratefleet": self.piratefleet,
             "bounty": self.bounty
         }
@@ -47,14 +49,14 @@ class Origin(db.Model):
     __tablename__ = "Origin"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-    hasKingdom = db.Column(Boolean, unique=False, default=True)
+    haskingdom = db.Column(Boolean, unique=False, default=True)
     characters = db.relationship("OnePieceCharacter")
 
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
-            "haskingdom": self.hasKingdom
+            "haskingdom": self.haskingdom
         }
 #Crew
 
@@ -66,8 +68,7 @@ class Crew(db.Model):
     captain = db.Column(db.String(255))
     mainShip = db.Column(db.String(255))
     totalBounty = db.Column(db.Integer)
-    characters = db.relationship("OnePieceCharacter")
-
+    # characters = db.relationship("OnePieceCharacter")
 
     def to_dict(self):
         return {
@@ -88,7 +89,8 @@ class PirateFleet(db.Model):
     captain = db.Column(db.String(255))
     totalPeople = db.Column(db.Integer)
     totalBounty = db.Column(db.Integer)
-    characters = db.relationship("OnePieceCharacter")
+
+    # characters = db.relationship("OnePieceCharacter")
 
 
     def to_dict(self):
@@ -108,7 +110,7 @@ class DevilFruit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     definition = db.Column(db.String(255))
-    parent = relationship("devilfruittype", back_populates="DevilFruit")
+    # parent = relationship("devilfruittype")
 
 
     def to_dict(self):

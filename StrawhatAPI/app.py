@@ -5,9 +5,9 @@ from flask import request, jsonify
 
 #API Related imports
 from api import app, db
-from api.queries import listOnePieceCharacters_resolver
-from api.queries import getSingleCharacter_resolver
-from api.mutations import create_character_resolver, update_character_resolver, delete_character_resolver
+from api.queries import listOnePieceCharacters_resolver, getSingleCharacter_resolver, listOrigin_resolver, getSingleOrigin_resolver
+from api.mutations import create_character_resolver, \
+    update_character_resolver, delete_character_resolver
 
 #Data management
 query = ObjectType("Query")
@@ -16,6 +16,8 @@ mutation = ObjectType("Mutation")
 #Setting fields
 query.set_field("listCharacters", listOnePieceCharacters_resolver)
 query.set_field("getCharacter", getSingleCharacter_resolver)
+query.set_field("listOrigins", listOrigin_resolver)
+# query.set_field("getOrigin", getSingleOrigin_resolver)
 
 mutation.set_field("createOnePieceCharacter", create_character_resolver)
 mutation.set_field("updateOnePieceCharacter", update_character_resolver)

@@ -4,13 +4,23 @@ from api.models import OnePieceCharacter, Origin
 from ariadne import convert_kwargs_to_snake_case
 # Character
 @convert_kwargs_to_snake_case
-def create_character_resolver(obj, info, name, crew,  devilfruit, bounty):
+def create_character_resolver(obj, info, name, bloodType,
+                              occupation, nickName, isAlive,
+                              hasDevilFruit, isPartOfFleet,
+                              bounty, age, height, birthday
+                              ):
     try:
-        print(devilfruit)
-        character = OnePieceCharacter(name=name,
-                                      crew=crew,
-                                      devilfruit=devilfruit,
-                                      bounty = bounty
+        character = OnePieceCharacter(name = name,
+                                      bloodType = bloodType,
+                                      occupation = occupation,
+                                      nickName = nickName,
+                                      isAlive = isAlive,
+                                      hasDevilFruit = hasDevilFruit,
+                                      isPartOfFleet = isPartOfFleet,
+                                      bounty = bounty,
+                                      age = age,
+                                      height = height,
+                                      birthday = birthday
                                       )
         db.session.add(character)
         db.session.commit()
@@ -27,14 +37,24 @@ def create_character_resolver(obj, info, name, crew,  devilfruit, bounty):
     return payload
 
 @convert_kwargs_to_snake_case
-def update_character_resolver(obj, info, id, name, crew,  devilfruit, bounty):
+def update_character_resolver(obj, info, id, name, bloodType,
+                              occupation, nickName, isAlive,
+                              hasDevilFruit, isPartOfFleet,
+                              bounty, age, height, birthday):
     try:
         character = OnePieceCharacter.query.get(id)
         if character:
-            character.name = name
-            character.crew = crew
-            character.devilfruit = devilfruit
-            character.bounty = bounty
+            name = name,
+            bloodType = bloodType,
+            occupation = occupation,
+            nickName = nickName,
+            isAlive = isAlive,
+            hasDevilFruit = hasDevilFruit,
+            isPartOfFleet = isPartOfFleet,
+            bounty = bounty,
+            age = age,
+            height = height,
+            birthday = birthday
         db.session.add(character)
         db.session.commit()
         payload = {
