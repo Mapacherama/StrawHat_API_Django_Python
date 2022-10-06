@@ -39,7 +39,6 @@ class OnePieceCharacter(db.Model):
             "age": self.age,
             "height": self.height,
             "birthday": self.birthday,
-            "origin": self.origin,
             "piratefleet": self.piratefleet,
             "bounty": self.bounty
         }
@@ -50,7 +49,7 @@ class Origin(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     haskingdom = db.Column(Boolean, unique=False, default=True)
-    characters = db.relationship("OnePieceCharacter")
+    characters = db.relationship("OnePieceCharacter", back_populates = "Origin")
 
     def to_dict(self):
         return {

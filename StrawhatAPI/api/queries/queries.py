@@ -1,7 +1,8 @@
-from .models import OnePieceCharacter, Origin
+from api.models import OnePieceCharacter, Origin
 from ariadne import convert_kwargs_to_snake_case, QueryType
 
 query = QueryType()
+
 
 @convert_kwargs_to_snake_case
 def listOnePieceCharacters_resolver(obj, info):
@@ -28,13 +29,15 @@ def getSingleCharacter_resolver(obj, info, id):
         }
     return payload
 
+
 # query = Skill.get_query(info=info)
 @convert_kwargs_to_snake_case
 def listOrigin_resolver(obj, info):
 
     try:
         origins = [
-            origin for origin in Origin.query.filter(OnePieceCharacter.origin_id == obj.id)
+            origin for origin in Origin.query.filter(
+                OnePieceCharacter.origin_id == obj.id)
         ]
 
         payload = {"success": True, "origins": origins}
@@ -47,14 +50,10 @@ def listOrigin_resolver(obj, info):
 def getSingleOrigin_resolver(obj, info, id):
     try:
         origin = Origin.query.filter(OnePieceCharacter.origin_id == id)
-        payload = {"success": True, "recidence": character}
+        payload = {"success": True, "origin": origin}
     except AttributeError:  # todo not found
         payload = {
             "success": False,
             "errors": ["Character item matching {id} not found"]
         }
     return payload
-
-
-
-

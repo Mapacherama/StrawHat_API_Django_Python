@@ -4,8 +4,8 @@ from ariadne.constants import PLAYGROUND_HTML
 from flask import request, jsonify
 
 #API Related imports
-from api import app, db
-from api.queries import listOnePieceCharacters_resolver, getSingleCharacter_resolver, listOrigin_resolver, getSingleOrigin_resolver
+from api import app
+from api.queries.queries import listOnePieceCharacters_resolver, getSingleCharacter_resolver, listOrigin_resolver
 from api.mutations import create_character_resolver, \
     update_character_resolver, delete_character_resolver
 
