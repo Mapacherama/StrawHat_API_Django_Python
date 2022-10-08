@@ -1,0 +1,5 @@
+type Query {
+  getMultipleCharacters: OnePieceCharactersResult!
+  getSingleCharacter(id: ID!): OnePieceCharacterResult!
+  listOrigins: MultipleOriginsResult!
+}

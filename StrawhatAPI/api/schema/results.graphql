@@ -1,0 +1,27 @@
+#Origin
+
+type SingleOriginResult {
+  success: Boolean!
+  errors: [String]
+  origin: Origin
+}
+
+type MultipleOriginsResult {
+  success: Boolean!
+  errors: [String]
+  origin: [Origin]
+}
+
+#OnePieceCharacter
+
+type OnePieceCharacterResult { #Better naming convention (?)
+  success: Boolean!
+  errors: [String]
+  character: OnePieceCharacter
+}
+
+type OnePieceCharactersResult {
+  success: Boolean!
+  errors: [String]
+  onepiececharacters: [OnePieceCharacter]
+}

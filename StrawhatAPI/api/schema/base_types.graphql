@@ -1,0 +1,19 @@
+type OnePieceCharacter {
+  id: ID!
+  name: String!
+  bloodtype: String!
+  occupation: String!
+  nickname: String!
+  isalive: Boolean!
+  ispartoffleet: Boolean!
+  bounty: Int!
+  age: Int!
+  height: Int!
+  Origin: SingleOriginResult
+}
+
+type Origin {
+  id: ID!
+  name: String!
+  hasKingdom: Boolean!
+}

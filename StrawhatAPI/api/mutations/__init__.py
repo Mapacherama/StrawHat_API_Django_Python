@@ -1,16 +1,23 @@
-from flask import Flask
-from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
+from ariadne import ObjectType
 
-app = Flask(__name__)
-CORS(app)
+from . import characters, origin
 
-'mysql+pymysql://<username>:<password>@<host>/<dbname>'
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://tesselj2:tquaJgBKa1Ow0t5L@oege.ie.hva.nl/ztesselj2"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
+mutation = ObjectType("Mutation")
+
+#character
+
+mutation.set_field("addCharacter", characters.create_character_resolver)
+mutation.set_field("updateCharacter", characters.update_character_resolver)
+mutation.set_field("deleteCharacter", characters.delete_character_resolver)
+
+#Origin
+
+mutation.set_field("addOrigin", origin.create_origin_resolver)
+mutation.set_field("updateOrigin", origin.update_origin_resolver)
+mutation.set_field("deleteOrigin", origin.delete_origin_resolver)
 
 
-@app.route('/')
-def hello():
-    return 'My First API !!'
+
+
+
+

@@ -1,0 +1,43 @@
+type Mutation {
+  addCharacter(
+    name: String!
+    bloodType: String!
+    occupation: String!
+    nickName: String!
+    isAlive: Boolean!
+    hasDevilFruit: Boolean!
+    isPartOfFleet: Boolean!
+    bounty: Int!
+    age: Int!
+    height: Int!
+    birthDay: String!
+  ): OnePieceCharacterResult!
+
+  updateCharacter (
+    id: ID!,
+    name: String!
+    bloodType: String!
+    occupation: String!
+    nickName: String!
+    isAlive: Boolean!
+    hasDevilFruit: Boolean!
+    isPartOfFleet: Boolean!
+    bounty: Int!
+    age: Int!
+    height: Int!
+    birthDay: String!
+  ): SingleOriginResult!
+  deleteCharacter(id: ID): SingleOriginResult!
+
+    addOrigin(
+    name: String!
+    hasKingdom: Boolean!
+  ): SingleOriginResult!
+
+  updateOrigin(
+    id: ID!
+    name: String!
+    hasKingdom: Boolean!
+  ): SingleOriginResult!
+  deleteOrigin(id: ID): SingleOriginResult!
+}
