@@ -32,40 +32,20 @@ class OnePieceCharacter(BaseMixin):
     age = Column(Integer)
     height = Column(Integer)
     birthday = Column(Date)
+    origin_id = Column(Integer, ForeignKey("origin.id", ondelete="CASCADE"))
 
-    # def to_dict(self):
-    #     return {
-    #         "id": self.id,
-    #         "name": self.name,
-    #         "bloodtype": self.bloodtype,
-    #         "occupation": self.occupation,
-    #         "nickname": self.nickname,
-    #         "devilfruit": self.devilfruit,
-    #         "isalive": self.isalive,
-    #         "hasdevilfruit": self.hasdevilFruit,
-    #         "ispartoffleet": self.ispartOffleet,
-    #         "bounty": self.bounty,
-    #         "age": self.age,
-    #         "height": self.height,
-    #         "birthday": self.birthday,
-    #         "piratefleet": self.piratefleet,
-    #         "bounty": self.bounty
-    #     }
+
 # Place of origin
 
-class Origin(BaseMixin):
+class origin(BaseMixin):
     __tablename__ = "origin"
-    id = Column(db.Integer, primary_key=True)
-    name = Column(db.String(255))
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
     haskingdom = Column(Boolean, unique=False, default=True)
-    character_id = Column(Integer, ForeignKey("characters.id", ondelete="CASCADE"))
 
-    # def to_dict(self):
-    #     return {
-    #         "id": self.id,
-    #         "name": self.name,
-    #         "haskingdom": self.haskingdom
-    #     }
+
+
+
 
 
 

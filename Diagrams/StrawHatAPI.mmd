@@ -1,5 +1,5 @@
 classDiagram
-    OnePieceCharacter  "1" --> "1" Origin: Born in 
+    OnePieceCharacter  "1" --> "1" origin: Born in
     OnePieceCharacter "1" --> "1" Crew: Part of
     OnePieceCharacter "1" --> "1" PirateFleet: Serves in
     OnePieceCharacter "1" --> "0..*" DevilFruit: Has eaten 
@@ -32,7 +32,7 @@ classDiagram
       Logia
     }
     
-    class Origin{
+    class origin{
       +String Name      
       +bool hasKingdom           
     }

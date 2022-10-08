@@ -1,15 +1,15 @@
 #Origin
 
 type SingleOriginResult {
-  success: Boolean!
-  errors: [String]
-  origin: Origin
+  status: Boolean!
+  errors: [String]!
+  origin: origin
 }
 
 type MultipleOriginsResult {
   success: Boolean!
   errors: [String]
-  origin: [Origin]
+  origin: [origin]
 }
 
 #OnePieceCharacter

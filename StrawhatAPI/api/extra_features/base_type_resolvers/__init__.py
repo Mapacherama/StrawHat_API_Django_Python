@@ -16,7 +16,7 @@ character_type.set_field("age",  character.resolve_character_age)
 character_type.set_field("height",  character.resolve_character_height)
 character_type.set_field("birthday",  character.resolve_character_birthday)
 
-origin_type = ObjectType("Origin")
+origin_type = ObjectType("origin")
 
 origin_type.set_field("id", origin.resolve_origin_id)
 origin_type.set_field("characterId", origin.resolve_origin_character_id)

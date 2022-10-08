@@ -1,5 +1,5 @@
 from api import db
-from api.models import OnePieceCharacter, Origin
+from api.models import OnePieceCharacter, origin
 from ariadne import convert_kwargs_to_snake_case
 
 # Character

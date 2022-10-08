@@ -9,10 +9,10 @@ type OnePieceCharacter {
   bounty: Int!
   age: Int!
   height: Int!
-  Origin: SingleOriginResult
+  origin: SingleOriginResult
 }
 
-type Origin {
+type origin {
   id: ID!
   name: String!
   hasKingdom: Boolean!

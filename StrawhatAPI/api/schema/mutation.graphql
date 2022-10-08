@@ -27,7 +27,7 @@ type Mutation {
     height: Int!
     birthDay: String!
   ): SingleOriginResult!
-  deleteCharacter(id: ID): SingleOriginResult!
+  deleteCharacter(id: ID): OnePieceCharacterResult!
 
     addOrigin(
     name: String!
