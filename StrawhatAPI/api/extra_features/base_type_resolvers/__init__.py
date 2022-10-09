@@ -5,6 +5,7 @@ from . import character, origin
 character_type = ObjectType("character")
 
 character_type.set_field("id", character.resolve_character_id)
+character_type.set_field("name", character.resolve_character_name)
 character_type.set_field("bloodType", character.resolve_character_bloodtype)
 character_type.set_field("occupation",  character.resolve_character_occupation)
 character_type.set_field("nickName",  character.resolve_character_nickname)

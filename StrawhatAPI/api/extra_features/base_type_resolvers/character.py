@@ -2,6 +2,9 @@ from api.models import OnePieceCharacter
 def resolve_character_id(character_obj: OnePieceCharacter, _info) -> int:
     return character_obj.id
 
+def resolve_character_name(character_obj: OnePieceCharacter, _info) -> int:
+    return character_obj.name
+
 def resolve_character_bloodtype(character_obj: OnePieceCharacter, _info) -> str:
     return character_obj.bloodtype
 

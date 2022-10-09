@@ -12,11 +12,8 @@ def listOnePieceCharacters_resolver(obj, info):
 
 
 @convert_kwargs_to_snake_case
-def getSingleCharacter_resolver(obj, info, id):
-    try:
-        character = OnePieceCharacter.query.get(id)
-        
-    except KeyError: 
-        pass
+def getSingleCharacter_resolver(obj, info, **kwargs):    
+        character = OnePieceCharacter.query.get(kwargs["id"])       
+    
         
         return create_result(character = character)
