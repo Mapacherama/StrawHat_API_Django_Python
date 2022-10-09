@@ -6,9 +6,9 @@ from ariadne import convert_kwargs_to_snake_case
 @convert_kwargs_to_snake_case
 def listOrigin_resolver(obj, info):
 
-    origin = db.session.query(origin).all()
+    orgns = db.session.query(origin).all()
         
-    return create_result(origin = origin)
+    return create_result(origin = orgns)
 
 
 @convert_kwargs_to_snake_case
