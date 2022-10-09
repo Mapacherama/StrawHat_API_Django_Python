@@ -6,8 +6,8 @@ from ariadne import convert_kwargs_to_snake_case
 def create_origin_resolver(obj, info, **kwargs):
     self_status = True
     errors = []
-    Origin = origin(kwargs)
-    db.session.add(origin)
+    Origin = origin(**kwargs)
+    db.session.commit()
 
     return create_result(status=self_status, errors = errors, origin = Origin)
 

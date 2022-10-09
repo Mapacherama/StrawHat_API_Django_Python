@@ -9,5 +9,3 @@ CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://tesselj2:tquaJgBKa1Ow0t5L@oege.ie.hva.nl/ztesselj2"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
-
-

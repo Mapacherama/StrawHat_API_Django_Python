@@ -2,8 +2,6 @@ from api.models import origin
 
 def resolve_origin_id(origin_obj: origin, _info):
     return origin_obj.id
-def resolve_origin_character_id(origin_obj: origin, _info):
-    return origin_obj.character_id
 def resolve_origin_name(origin_obj: origin, _info):
     return origin_obj.name
 

@@ -17,11 +17,11 @@ type MultipleOriginsResult {
 type OnePieceCharacterResult { #Better naming convention (?)
   success: Boolean!
   errors: [String]
-  character: OnePieceCharacter
+  character: character
 }
 
 type OnePieceCharactersResult {
   success: Boolean!
   errors: [String]
-  onepiececharacters: [OnePieceCharacter]
+  onepiececharacters: [character]
 }

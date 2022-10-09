@@ -19,5 +19,5 @@ type_defs = load_schema_from_path(
 
 schema = make_executable_schema(
     type_defs,
-    query, mutation, snake_case_fallback_resolvers
+    query, mutation, origin_type, character_type, snake_case_fallback_resolvers
 )

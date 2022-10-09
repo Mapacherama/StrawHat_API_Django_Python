@@ -1,15 +1,17 @@
-type OnePieceCharacter {
+type character {
   id: ID!
   name: String!
-  bloodtype: String!
+  bloodType: String!
   occupation: String!
-  nickname: String!
-  isalive: Boolean!
-  ispartoffleet: Boolean!
+  nickName: String!
+  isAlive: Boolean!
+  isPartOfFleet: Boolean!
+  hasDevilFruit: Boolean!
   bounty: Int!
   age: Int!
   height: Int!
   origin: SingleOriginResult
+  birthday: String!
 }
 
 type origin {

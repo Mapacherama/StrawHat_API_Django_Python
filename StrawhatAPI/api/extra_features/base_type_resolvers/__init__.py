@@ -2,7 +2,7 @@ from ariadne import ObjectType
 
 from . import character, origin
 
-character_type = ObjectType("Character")
+character_type = ObjectType("character")
 
 character_type.set_field("id", character.resolve_character_id)
 character_type.set_field("bloodType", character.resolve_character_bloodtype)
@@ -19,7 +19,6 @@ character_type.set_field("birthday",  character.resolve_character_birthday)
 origin_type = ObjectType("origin")
 
 origin_type.set_field("id", origin.resolve_origin_id)
-origin_type.set_field("characterId", origin.resolve_origin_character_id)
 origin_type.set_field("name", origin.resolve_origin_name)
 origin_type.set_field("hasKingdom", origin.resolve_origin_haskingdom)
 
