@@ -37,7 +37,7 @@ type Mutation {
   updateOrigin(
     id: ID!
     name: String!
-    hasKingdom: Boolean!
+    haskingdom: Boolean!
   ): SingleOriginResult!
   deleteOrigin(id: ID): SingleOriginResult!
 }

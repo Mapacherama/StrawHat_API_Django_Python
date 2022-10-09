@@ -12,7 +12,7 @@ def listOrigin_resolver(obj, info):
 
 
 @convert_kwargs_to_snake_case
-def getSingleOrigin_resolver(obj, info, id):
-    origin = db.session.query(origin).filter(OnePieceCharacter.origin_id == id).first()
+def getSingleOrigin_resolver(obj, info, **kwargs):
+    orgn = db.session.query(origin).join(OnePieceCharacter).filter(OnePieceCharacter.origin_id == kwargs["id"]).first()
 
-    return origin
+    return create_result(origin = orgn)

@@ -41,7 +41,7 @@ class origin(BaseMixin):
     __tablename__ = "origin"
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
-    haskingdom = Column(Boolean, unique=False, default=True)
+    hasKingdom = Column(Boolean, unique=False, default=True)
 
 
 

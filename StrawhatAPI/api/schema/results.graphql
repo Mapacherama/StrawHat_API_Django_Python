@@ -23,5 +23,5 @@ type OnePieceCharacterResult { #Better naming convention (?)
 type OnePieceCharactersResult {
   success: Boolean!
   errors: [String]
-  onepiececharacters: [character]
+  characters: [character]
 }

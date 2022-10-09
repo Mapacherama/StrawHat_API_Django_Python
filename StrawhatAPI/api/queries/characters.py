@@ -6,14 +6,14 @@ from ariadne import convert_kwargs_to_snake_case
 @convert_kwargs_to_snake_case
 def listOnePieceCharacters_resolver(obj, info):
            
-    characters = OnePieceCharacter.query.all()       
+    characters = db.session.query(OnePieceCharacter).all()
     
     return create_result(characters = characters)
 
 
 @convert_kwargs_to_snake_case
 def getSingleCharacter_resolver(obj, info, **kwargs):    
-        character = OnePieceCharacter.query.get(kwargs["id"])       
-    
+        character = OnePieceCharacter.query.get(kwargs["id"])
+
         
         return create_result(character = character)
