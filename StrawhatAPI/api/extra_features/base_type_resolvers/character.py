@@ -32,6 +32,11 @@ def resolve_character_height(character_obj: OnePieceCharacter, _info) -> int:
 
 def resolve_character_birthday(character_obj: OnePieceCharacter, _info):
     return character_obj.birthday
+def resolve_character_origin_id(character_obj: OnePieceCharacter, _info):
+    return character_obj.origin_id
+
+
+
 
 
 

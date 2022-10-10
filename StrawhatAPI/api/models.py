@@ -17,7 +17,7 @@ class BaseMixin(db.Model):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 class OnePieceCharacter(BaseMixin):
-    __tablename__ = "characters"
+    __tablename__ = "character"
 
     id = Column(db.Integer, primary_key=True)
     name = Column(db.String(255))
@@ -42,6 +42,7 @@ class origin(BaseMixin):
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
     hasKingdom = Column(Boolean, unique=False, default=True)
+    character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
 
 

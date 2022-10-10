@@ -8,6 +8,8 @@ def resolve_origin_name(origin_obj: origin, _info):
 def resolve_origin_haskingdom(origin_obj: origin, _info)-> bool:
     return origin_obj.hasKingdom
 
+def resolve_origin_haskingdom(origin_obj: origin, _info)-> int:
+    return origin_obj.character_id
 
 
 
