@@ -3,13 +3,13 @@
 type SingleOriginResult {
   status: Boolean!
   errors: [String]!
-  origin: origin
+  origin: originType
 }
 
 type MultipleOriginsResult {
   success: Boolean!
   errors: [String]
-  origin: [origin]
+  origin: [originType]
 }
 
 #OnePieceCharacter
@@ -17,11 +17,12 @@ type MultipleOriginsResult {
 type OnePieceCharacterResult { #Better naming convention (?)
   success: Boolean!
   errors: [String]
-  character: character
+  character: characterType
+  origin: originType
 }
 
 type OnePieceCharactersResult {
   success: Boolean!
   errors: [String]
-  characters: [character]
+  characters: [characterType]
 }

@@ -1,4 +1,4 @@
-type character {
+type characterType {
   id: ID!
   name: String!
   bloodType: String!
@@ -10,12 +10,13 @@ type character {
   bounty: Int!
   age: Int!
   height: Int!
-  origin: SingleOriginResult
   birthday: String!
+  origin:originType
 }
 
-type origin {
+type originType {
   id: ID!
   name: String!
   hasKingdom: Boolean!
+  character_id: Int
 }
