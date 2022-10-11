@@ -1,5 +1,6 @@
 from api import db
 from api.models import OnePieceCharacter, origin
+from api.extra_features.creation import create_result
 from ariadne import convert_kwargs_to_snake_case
 
 # Character
@@ -69,15 +70,10 @@ def update_character_resolver(obj, info, id, name, bloodType,
     return payload
 
 @convert_kwargs_to_snake_case
-def delete_character_resolver(obj, info, id):
-    try:
-        character = OnePieceCharacter.query.get(id)
-        db.session.delete(character)
-        db.session.commit()
-        payload = {"success": True,"character": character.to_dict()}
-    except AttributeError:
-        payload = {
-            "success": False,
-            "errors": ["Not found"]
-        }
-    return 
+def delete_character_resolver(obj, info, **kwargs):
+
+    character = OnePieceCharacter.query.get(kwargs["id"])
+    db.session.delete(character)
+    db.session.commit()
+
+    return create_result()

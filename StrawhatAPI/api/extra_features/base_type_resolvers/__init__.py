@@ -26,3 +26,5 @@ origin_type.set_field("hasKingdom", origin.resolve_origin_haskingdom)
 origin_type.set_field("character_id", origin.resolve_origin_character_id)
 
 
+
+

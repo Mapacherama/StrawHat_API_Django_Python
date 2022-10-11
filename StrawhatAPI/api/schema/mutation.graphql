@@ -32,12 +32,14 @@ type Mutation {
     addOrigin(
     name: String!
     hasKingdom: Boolean!
+    character_id: Int!
   ): SingleOriginResult!
 
   updateOrigin(
     id: ID!
     name: String!
     haskingdom: Boolean!
+    character_id: Int!
   ): SingleOriginResult!
   deleteOrigin(id: ID): SingleOriginResult!
 }
