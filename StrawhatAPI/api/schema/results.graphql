@@ -18,7 +18,6 @@ type OnePieceCharacterResult { #Better naming convention (?)
   success: Boolean!
   errors: [String]
   character: characterType
-  origin: originType
 }
 
 type OnePieceCharactersResult {

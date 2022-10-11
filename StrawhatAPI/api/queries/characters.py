@@ -13,7 +13,6 @@ def listOnePieceCharacters_resolver(obj, info):
 
 @convert_kwargs_to_snake_case
 def getSingleCharacter_resolver(obj, info, **kwargs):    
-        character = OnePieceCharacter.query.get(kwargs["id"])   
-        orgn = db.session.query(origin).filter(origin.character_id == kwargs["id"]).first()
+        character = OnePieceCharacter.query.get(kwargs["id"])           
         
-        return create_result(character = character, origin = orgn)
+        return create_result(character = character)
