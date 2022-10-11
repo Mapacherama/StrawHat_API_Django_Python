@@ -13,8 +13,8 @@ def create_origin_resolver(obj, info, **kwargs):
     return create_result(status=self_status, errors = errors, origin = Origin)
 
 @convert_kwargs_to_snake_case
-def update_origin_resolver(obj, info, id, **kwargs):
-    errors = []
+def update_origin_resolver(obj, info, **kwargs):
+    errors = []    
     orign = origin.query.get(kwargs["id"])
 
     if not product:
@@ -23,8 +23,7 @@ def update_origin_resolver(obj, info, id, **kwargs):
     origin.update(**kwargs)
     db.session.commit()
 
-
-    return create_result(errors=errors, origin = origin)
+    return create_result(status=True, errors = errors, origin = origin)
 
 #Origin
 
