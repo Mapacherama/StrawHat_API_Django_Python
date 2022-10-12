@@ -33,6 +33,7 @@ class OnePieceCharacter(BaseMixin):
     height = Column(Integer)
     birthday = Column(Date)
     origin_id = Column(Integer, ForeignKey("origin.id", ondelete="CASCADE"))
+    crew_id = Column(Integer, ForeignKey("crew.id", ondelete="CASCADE"))
 
 
 # Place of origin
@@ -42,6 +43,16 @@ class origin(BaseMixin):
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
     hasKingdom = Column(Boolean, unique=False, default=True)
+    character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
+
+class Crew(BaseMixin):
+    __tablename__ = "crew"
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+    oceanOfOrigin = Column(String(255))
+    captain = Column(String(255))
+    mainShip = Column(String(255))
+    totalBounty = Column(Integer)
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
 

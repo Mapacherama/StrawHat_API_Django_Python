@@ -20,3 +20,13 @@ type originType {
   hasKingdom: Boolean!
   character_id: Int
 }
+
+type crewType {
+  id: ID!
+  name: String!
+  oceanOfOrigin: String!
+  captain: String!
+  mainShip: String!
+  totalBounty: Int!
+  character_id: Int
+}

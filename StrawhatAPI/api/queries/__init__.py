@@ -1,6 +1,6 @@
 from ariadne import ObjectType
 
-from . import characters, origin
+from . import characters, origin, crew
 
 query = ObjectType("Query")
 
@@ -10,7 +10,7 @@ query.set_field("getMultipleCharacters", characters.listOnePieceCharacters_resol
 query.set_field("getSingleOrigin", origin.getSingleOrigin_resolver)
 query.set_field("getMultipleOrigins", origin.listOrigin_resolver)
 
-query.set_field("getSingleCrew", origin.getSingleCrew_resolver)
-query.set_field("getMultipleCrews", origin.listCrews_resolver)
+query.set_field("getSingleCrew", crew.getSingleCrew_resolver)
+query.set_field("getMultipleCrews", crew.listCrews_resolver)
 
 

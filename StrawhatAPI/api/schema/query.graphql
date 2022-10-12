@@ -4,4 +4,7 @@ type Query {
 
   getMultipleOrigins: MultipleOriginsResult!
   getSingleOrigin(id:ID!): SingleOriginResult!
+
+  getMultipleCrews: MultipleCrewsResult!
+  getSingleCrew(id:ID!): SingleCrewResult!
 }

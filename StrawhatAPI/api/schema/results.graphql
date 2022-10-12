@@ -6,11 +6,27 @@ type SingleOriginResult {
   origin: originType
 }
 
+#Crew
 type MultipleOriginsResult {
   success: Boolean!
   errors: [String]
-  origin: [originType]
+  crew: [crewType]
 }
+
+# Crew
+
+type SingleCrewResult {
+  status: Boolean!
+  errors: [String]!
+  crew: crewType
+}
+
+type MultipleCrewsResult {
+  success: Boolean!
+  errors: [String]
+  crew: [crewType]
+}
+
 
 #OnePieceCharacter
 
