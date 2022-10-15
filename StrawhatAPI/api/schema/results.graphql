@@ -8,7 +8,7 @@ type SingleOriginResult {
 
 #Crew
 type MultipleOriginsResult {
-  success: Boolean!
+  status: Boolean!
   errors: [String]
   crew: [crewType]
 }
@@ -22,7 +22,7 @@ type SingleCrewResult {
 }
 
 type MultipleCrewsResult {
-  success: Boolean!
+  status: Boolean!
   errors: [String]
   crew: [crewType]
 }
@@ -31,13 +31,13 @@ type MultipleCrewsResult {
 #OnePieceCharacter
 
 type OnePieceCharacterResult { #Better naming convention (?)
-  success: Boolean!
+  status: Boolean!
   errors: [String]
   character: characterType
 }
 
 type OnePieceCharactersResult {
-  success: Boolean!
+  status: Boolean!
   errors: [String]
   characters: [characterType]
 }

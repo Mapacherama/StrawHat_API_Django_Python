@@ -35,7 +35,6 @@ class OnePieceCharacter(BaseMixin):
     origin_id = Column(Integer, ForeignKey("origin.id", ondelete="CASCADE"))
     crew_id = Column(Integer, ForeignKey("crew.id", ondelete="CASCADE"))
 
-
 # Place of origin
 
 class origin(BaseMixin):
