@@ -17,6 +17,8 @@ character_type.set_field("age",  character.resolve_character_age)
 character_type.set_field("height",  character.resolve_character_height)
 character_type.set_field("birthday",  character.resolve_character_birthday)
 character_type.set_field("origin",  character.resolve_character_origin)
+character_type.set_field("crew",  character.resolve_character_crew)
+
 
 origin_type = ObjectType("originType")
 
@@ -27,12 +29,13 @@ origin_type.set_field("character_id", origin.resolve_origin_character_id)
 
 crew_type = ObjectType("crewType")
 
-crew_type.set_field("id", crew.resolve_origin_id)
-crew_type.set_field("oceanOfOrigin", crew.resolve_crew_oceanoforigin)
+crew_type.set_field("id", crew.resolve_crew_id)
+crew_type.set_field("name", crew.resolve_crew_name)
+crew_type.set_field("oceanOfOrigin", crew.resolve_crew_oceanOfOrigin)
 crew_type.set_field("captain", crew.resolve_crew_captain)
 crew_type.set_field("mainShip", crew.resolve_crew_mainship)
 crew_type.set_field("totalBounty", crew.resolve_crew_totalbounty)
-crew_type.set_field("character_id", origin.resolve_origin_character_id)
+crew_type.set_field("character_id", crew.resolve_crew_character_id)
 
 
 

@@ -11,7 +11,8 @@ type characterType {
   age: Int!
   height: Int!
   birthday: String!
-  origin:originType
+  origin: originType
+  crew: crewType
 }
 
 type originType {
@@ -24,9 +25,9 @@ type originType {
 type crewType {
   id: ID!
   name: String!
-  oceanOfOrigin: String!
+  oceanoforigin: String!
   captain: String!
-  mainShip: String!
-  totalBounty: Int!
+  mainship: String!
+  totalbounty: Int
   character_id: Int
 }

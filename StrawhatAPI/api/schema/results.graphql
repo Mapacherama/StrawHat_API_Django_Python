@@ -10,7 +10,7 @@ type SingleOriginResult {
 type MultipleOriginsResult {
   status: Boolean!
   errors: [String]
-  crew: [crewType]
+  crew: [originType]
 }
 
 # Crew

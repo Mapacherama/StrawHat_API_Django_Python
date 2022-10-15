@@ -44,14 +44,14 @@ class origin(BaseMixin):
     hasKingdom = Column(Boolean, unique=False, default=True)
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
-class Crew(BaseMixin):
+class crew(BaseMixin):
     __tablename__ = "crew"
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
-    oceanOfOrigin = Column(String(255))
+    oceanoforigin = Column(String(255))
     captain = Column(String(255))
-    mainShip = Column(String(255))
-    totalBounty = Column(Integer)
+    mainship = Column(String(255))
+    totalbounty = Column(Integer)
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
 
