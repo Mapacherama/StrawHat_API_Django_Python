@@ -73,7 +73,7 @@ type Mutation {
     totalpeople: Int!
     totalbounty: Int!
     character_id: Int
-  ): SinglePirateFleetResult!
+  ): SinglePiratefleetResult!
 
   updatePiratefleet(
     id: ID!
@@ -82,6 +82,6 @@ type Mutation {
     totalpeople: Int!
     totalbounty: Int!
     character_id: Int
-  ): SinglePirateFleetResult!
-  deletePiratefleet(id: ID): SinglePirateFleetResult!
+  ): SinglePiratefleetResult!
+  deletePiratefleet(id: ID): SinglePiratefleetResult!
 }

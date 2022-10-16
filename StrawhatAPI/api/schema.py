@@ -4,7 +4,7 @@ from ariadne import snake_case_fallback_resolvers, load_schema_from_path, make_e
 
 from api.mutations import mutation
 from api.queries import query
-from api.extra_features.base_type_resolvers import character_type, origin_type
+from api.extra_features.base_type_resolvers import character_type, origin_type, piratefleet_type, crew_type
 
 # Тип Date
 date_scalar = ScalarType("Date")
@@ -19,5 +19,5 @@ type_defs = load_schema_from_path(
 
 schema = make_executable_schema(
     type_defs,
-    query, mutation, origin_type, character_type, snake_case_fallback_resolvers
+    query, mutation, origin_type, character_type, crew_type, piratefleet_type, snake_case_fallback_resolvers
 )

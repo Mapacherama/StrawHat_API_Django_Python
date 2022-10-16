@@ -31,10 +31,10 @@ crew_type = ObjectType("crewType")
 
 crew_type.set_field("id", crew.resolve_crew_id)
 crew_type.set_field("name", crew.resolve_crew_name)
-crew_type.set_field("oceanOfOrigin", crew.resolve_crew_oceanOfOrigin)
+crew_type.set_field("oceanoforigin", crew.resolve_crew_oceanOfOrigin)
 crew_type.set_field("captain", crew.resolve_crew_captain)
-crew_type.set_field("mainShip", crew.resolve_crew_mainship)
-crew_type.set_field("totalBounty", crew.resolve_crew_totalbounty)
+crew_type.set_field("mainship", crew.resolve_crew_mainship)
+crew_type.set_field("totalbounty", crew.resolve_crew_totalbounty)
 crew_type.set_field("character_id", crew.resolve_crew_character_id)
 
 piratefleet_type = ObjectType("piratefleetType")

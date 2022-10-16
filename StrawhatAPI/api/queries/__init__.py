@@ -13,7 +13,7 @@ query.set_field("getMultipleOrigins", origin.listOrigin_resolver)
 query.set_field("getSingleCrew", crew.getSingleCrew_resolver)
 query.set_field("getMultipleCrews", crew.listCrews_resolver)
 
-query.set_field("getSinglePirateFleet", crew.getSinglePirateFleet_resolver)
-query.set_field("getMultiplePirateFleets", crew.listPirateFleets_resolver)
+query.set_field("getSinglePiratefleet", piratefleet.getSinglePiratefleet_resolver)
+query.set_field("getMultiplePiratefleets", piratefleet.listPiratefleets_resolver)
 
 

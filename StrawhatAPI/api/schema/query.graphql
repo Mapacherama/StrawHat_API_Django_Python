@@ -8,6 +8,6 @@ type Query {
   getMultipleCrews: MultipleCrewsResult!
   getSingleCrew(id:ID!): SingleCrewResult!
 
-  getMultiplePiratefleet: MultiplePiratefleetResult!
+  getMultiplePiratefleets: MultiplePiratefleetsResult!
   getSinglePiratefleet(id:ID!): SinglePiratefleetResult!
 }

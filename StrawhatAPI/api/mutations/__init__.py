@@ -23,9 +23,9 @@ mutation.set_field("deleteCrew", crew.delete_crew_resolver)
 
 # PirateFleet
 
-mutation.set_field("addPirateFleet", piratefleet.create_piratefleet_resolver)
-mutation.set_field("updatePirateFleet", piratefleet.update_piratefleet_resolver)
-mutation.set_field("deletePirateFleet", piratefleet.delete_piratefleet_resolver)
+mutation.set_field("addPiratefleet", piratefleet.create_piratefleet_resolver)
+mutation.set_field("updatePiratefleet", piratefleet.update_piratefleet_resolver)
+mutation.set_field("deletePiratefleet", piratefleet.delete_piratefleet_resolver)
 
 
 
