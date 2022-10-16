@@ -15,12 +15,23 @@ def create_character_resolver(obj, _info, **kwargs):
 
 @convert_kwargs_to_snake_case
 def update_character_resolver(obj, _info, **kwargs):
-
+    errors = []
     character = OnePieceCharacter.query.get(kwargs["id"])
+    print(kwargs)
     if not character:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
-    db.session.update(**kwargs)
-    db.Session.commit()
+    #Look at the variable names of the dictionary ea in the kwargs dictionary.
+    if kwargs.get("has_devil_fruit"):
+        character.hasdevilFruit = kwargs["has_devil_fruit"]
+
+    if kwargs.get("is_part_of_fleet"):
+        character.ispartOffleet = kwargs["is_part_of_fleet"]
+
+    if kwargs.get("is_alive"):
+        character.isalive = kwargs["is_alive"]
+
+    character.update(**kwargs)
+    db.session.commit()
 
     return create_result(character = character)
 

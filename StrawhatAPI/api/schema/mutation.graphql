@@ -11,6 +11,8 @@ type Mutation {
     age: Int!
     height: Int!
     birthDay: String!
+    origin_id: Int
+    crew_id: Int
   ): OnePieceCharacterResult!
 
   updateCharacter (
@@ -26,7 +28,9 @@ type Mutation {
     age: Int!
     height: Int!
     birthDay: String!
-  ): SingleOriginResult!
+    origin_id: Int
+    crew_id: Int
+  ): OnePieceCharacterResult!
   deleteCharacter(id: ID): OnePieceCharacterResult!
 
   addOrigin(
