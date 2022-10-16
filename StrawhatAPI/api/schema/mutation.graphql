@@ -21,9 +21,9 @@ type Mutation {
     bloodType: String!
     occupation: String!
     nickName: String!
-    isAlive: Boolean!
-    hasDevilFruit: Boolean!
-    isPartOfFleet: Boolean!
+    isalive: Boolean!
+    hasdevilFruit: Boolean!
+    ispartOffleet: Boolean!
     bounty: Int!
     age: Int!
     height: Int!
