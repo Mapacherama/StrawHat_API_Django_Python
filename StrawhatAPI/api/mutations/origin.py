@@ -14,16 +14,22 @@ def create_origin_resolver(obj, info, **kwargs):
 
 @convert_kwargs_to_snake_case
 def update_origin_resolver(obj, info, **kwargs):
-    errors = []    
-    orign = origin.query.get(kwargs["id"])
+    errors = []
+    orign = db.session.query(origin).get(kwargs["id"])
 
-    if not product:
+    print(kwargs)
+
+    if not orign:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
 
-    origin.update(**kwargs)
+    if kwargs.get("has_kingdom"):
+        print(kwargs["has_kingdom"])
+        orign.hasKingdom = kwargs["has_kingdom"]
+
+    orign.update(**kwargs)
     db.session.commit()
 
-    return create_result(status=True, errors = errors, origin = origin)
+    return create_result(errors= errors, origin = orign)
 
 #Origin
 

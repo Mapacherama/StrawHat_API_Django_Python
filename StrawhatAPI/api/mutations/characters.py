@@ -20,7 +20,7 @@ def update_character_resolver(obj, _info, **kwargs):
     if not character:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
     db.session.update(**kwargs)
-    db.session.commit()
+    db.Session.commit()
 
     return create_result(character = character)
 

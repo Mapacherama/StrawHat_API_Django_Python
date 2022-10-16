@@ -38,27 +38,27 @@ type Mutation {
   updateOrigin(
     id: ID!
     name: String!
-    haskingdom: Boolean!
+    hasKingdom: Boolean!
     character_id: Int!
   ): SingleOriginResult!
   deleteOrigin(id: ID): SingleOriginResult!
 
   addCrew(
     name: String!
-    oceanOfOrigin: String!
+    oceanoforigin: String!
     captain: String!
-    mainShip: String!
-    totalBounty: Int!
+    mainship: String!
+    totalbounty: Int!
     character_id: Int
-  ): SingleOriginResult!
+  ): SingleCrewResult!
 
   updateCrew(
     id: ID!
     name: String!
-    oceanOfOrigin: String!
+    oceanoforigin: String!
     captain: String!
-    mainShip: String!
-    totalBounty: Int!
+    mainship: String!
+    totalbounty: Int!
     character_id: Int
   ): SingleCrewResult!
   deleteCrew(id: ID): SingleCrewResult!

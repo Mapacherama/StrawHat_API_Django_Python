@@ -1,29 +1,25 @@
 from api import db
-from api.models import OnePieceCharacter, Crew
+from api.models import crew
 from api.extra_features.creation import create_result
 from ariadne import convert_kwargs_to_snake_case
+@convert_kwargs_to_snake_case
+def create_crew_resolver(obj, _info, **kwargs):
 
-def create_crew_resolver(obj, info, **kwargs):
-    self_status = True
-    errors = []
-    crew = Crew(**kwargs)
-    db.session.add(crew)
+    Crew = crew(**kwargs)
+    db.session.add(Crew)
     db.session.commit()
 
-    return create_result(status=self_status, errors = errors, crew = crew)
+    return create_result(Crew)
 
 @convert_kwargs_to_snake_case
-def update_crew_resolver(obj, info, **kwargs):
-    errors = []
-    crew = Crew.query.get(kwargs["id"])
-
-    if not product:
+def update_crew_resolver(obj, _info, **kwargs):
+    Crew = crew.query.get(kwargs["id"])
+    if not Crew:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
-
-    crew.update(**kwargs)
+    db.session.update(**kwargs)
     db.session.commit()
 
-    return create_result(status=True, errors = errors, crew = crew)
+    return create_result(crew = Crew)
 
 #Origin
 
