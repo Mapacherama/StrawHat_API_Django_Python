@@ -13,20 +13,21 @@ def create_crew_resolver(obj, _info, **kwargs):
 
 @convert_kwargs_to_snake_case
 def update_crew_resolver(obj, _info, **kwargs):
+    errors = []
     Crew = crew.query.get(kwargs["id"])
     if not Crew:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
-    db.session.update(**kwargs)
+    Crew.update(**kwargs)
     db.session.commit()
 
-    return create_result(crew = Crew)
+    return create_result(errors=errors, crew = Crew)
 
 #Origin
 
 @convert_kwargs_to_snake_case
 def delete_crew_resolver(obj, info, **kwargs):
-    crew = Crew.query.get(kwargs["id"])
-    db.session.delete(crew)
+    Crew = crew.query.get(kwargs["id"])
+    db.session.delete(Crew)
     db.session.commit()
 
     return create_result()

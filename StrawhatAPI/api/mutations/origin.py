@@ -17,13 +17,10 @@ def update_origin_resolver(obj, info, **kwargs):
     errors = []
     orign = db.session.query(origin).get(kwargs["id"])
 
-    print(kwargs)
-
     if not orign:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
 
-    if kwargs.get("has_kingdom"):
-        print(kwargs["has_kingdom"])
+    if kwargs.get("has_kingdom"):        
         orign.hasKingdom = kwargs["has_kingdom"]
 
     orign.update(**kwargs)
