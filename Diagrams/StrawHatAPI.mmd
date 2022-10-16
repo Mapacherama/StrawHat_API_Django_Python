@@ -6,19 +6,21 @@ classDiagram
     DevilFruit "1" --> "1" DevilFruitType : Is Type of
     
     class OnePieceCharacter{
-      +String Name
-      +String BloodType
-      +String Occupation
-      +String NickName
-      +bool IsAlive
-      +bool HasDevilFruit
-      +bool IsPartOfFleet
-      +int Bounty
-      +int Age
-      +int Height
+      +String name
+      +String bloodtype
+      +String occupation
+      +String nickname
+      +String devilfruit
+      +bool isalive
+      +bool hasdevilFruit
+      +bool ispartOffleet
+      +int age
+      +int height
       +Date BirthDay
       +eat(DevilFruit)
-    }  
+    }
+
+
 
     class DevilFruit{
       +String Name
@@ -33,23 +35,23 @@ classDiagram
     }
     
     class origin{
-      +String Name      
+      +String name
       +bool hasKingdom           
     }
         
     class crew {
-      +String Name
-      +String OceanOfOrigin
-      +String Captain
-      +String MainShip
-      +int TotalBounty
+      +String name
+      +String oceanoforigin
+      +String captain
+      +String mainship
+      +int totalbounty
     }
 
     class PirateFleet {
-    +String Name
+    +String name
     +String Captain
-    +int TotalPeople
-    +int TotalBounty
+    +int totalpeople
+    +int totalbounty
     }
 
     

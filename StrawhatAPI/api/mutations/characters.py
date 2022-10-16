@@ -43,4 +43,4 @@ def delete_character_resolver(obj, info, **kwargs):
     db.session.delete(character)
     db.session.commit()
 
-    return create_result()
+    return create_result(character)

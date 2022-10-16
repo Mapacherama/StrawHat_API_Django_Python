@@ -55,6 +55,18 @@ class crew(BaseMixin):
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
 
+class piratefleet(BaseMixin):
+    __tablename__ = "piratefleet"
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+    captain = Column(String(255))
+    totalpeople = Column(Integer)
+    totalbounty = Column(Integer)
+    character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
+
+
+
+
 
 
 

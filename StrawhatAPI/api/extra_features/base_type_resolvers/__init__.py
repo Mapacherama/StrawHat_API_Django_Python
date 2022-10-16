@@ -1,6 +1,6 @@
 from ariadne import ObjectType
 
-from . import character, origin, crew
+from . import character, origin, crew, piratefleet
 
 character_type = ObjectType("characterType")
 
@@ -36,6 +36,15 @@ crew_type.set_field("captain", crew.resolve_crew_captain)
 crew_type.set_field("mainShip", crew.resolve_crew_mainship)
 crew_type.set_field("totalBounty", crew.resolve_crew_totalbounty)
 crew_type.set_field("character_id", crew.resolve_crew_character_id)
+
+piratefleet_type = ObjectType("piratefleetType")
+
+piratefleet_type.set_field("id", piratefleet.resolve_piratefleet_id)
+piratefleet_type.set_field("name", piratefleet.resolve_piratefleet_name)
+piratefleet_type.set_field("captain", piratefleet.resolve_piratefleet_captain)
+piratefleet_type.set_field("totalpeople", piratefleet.resolve_piratefleet_totalpeople)
+piratefleet_type.set_field("totalbounty", piratefleet.resolve_piratefleet_totalbounty)
+piratefleet_type.set_field("character_id", piratefleet.resolve_piratefleet_character_id)
 
 
 

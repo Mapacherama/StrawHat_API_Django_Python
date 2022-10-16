@@ -31,3 +31,12 @@ type crewType {
   totalbounty: Int
   character_id: Int
 }
+
+type piratefleetType {
+  id: ID!
+  name: String!
+  captain: String!
+  totalpeople: Int!
+  totalbounty: Int!
+  character_id: Int
+}

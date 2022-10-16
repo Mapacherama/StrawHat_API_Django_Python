@@ -1,3 +1,17 @@
+#OnePieceCharacter
+
+type OnePieceCharacterResult { #Better naming convention (?)
+  status: Boolean!
+  errors: [String]
+  character: characterType
+}
+
+type OnePieceCharactersResult {
+  status: Boolean!
+  errors: [String]
+  characters: [characterType]
+}
+
 #Origin
 
 type SingleOriginResult {
@@ -27,17 +41,17 @@ type MultipleCrewsResult {
   crew: [crewType]
 }
 
+# Piratefleet
 
-#OnePieceCharacter
-
-type OnePieceCharacterResult { #Better naming convention (?)
+type SinglePiratefleetResult {
   status: Boolean!
-  errors: [String]
-  character: characterType
+  errors: [String]!
+  crew: piratefleetType
 }
 
-type OnePieceCharactersResult {
+type MultiplePiratefleetsResult {
   status: Boolean!
   errors: [String]
-  characters: [characterType]
+  crew: [piratefleetType]
 }
+

@@ -66,4 +66,22 @@ type Mutation {
     character_id: Int
   ): SingleCrewResult!
   deleteCrew(id: ID): SingleCrewResult!
+
+    addPiratefleet(
+    name: String!
+    captain: String!
+    totalpeople: Int!
+    totalbounty: Int!
+    character_id: Int
+  ): SinglePirateFleetResult!
+
+  updatePiratefleet(
+    id: ID!
+    name: String!
+    captain: String!
+    totalpeople: Int!
+    totalbounty: Int!
+    character_id: Int
+  ): SinglePirateFleetResult!
+  deletePiratefleet(id: ID): SinglePirateFleetResult!
 }
