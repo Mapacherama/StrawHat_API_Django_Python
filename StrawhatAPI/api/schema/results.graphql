@@ -24,7 +24,7 @@ type SingleOriginResult {
 type MultipleOriginsResult {
   status: Boolean!
   errors: [String]
-  crew: [originType]
+  origins: [originType]
 }
 
 # Crew
@@ -46,12 +46,12 @@ type MultipleCrewsResult {
 type SinglePiratefleetResult {
   status: Boolean!
   errors: [String]!
-  crew: piratefleetType
+  piratefleet: piratefleetType
 }
 
 type MultiplePiratefleetsResult {
   status: Boolean!
   errors: [String]
-  crew: [piratefleetType]
+  piratefleets: [piratefleetType]
 }
 

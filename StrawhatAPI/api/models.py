@@ -34,6 +34,8 @@ class OnePieceCharacter(BaseMixin):
     birthday = Column(Date)
     origin_id = Column(Integer, ForeignKey("origin.id", ondelete="CASCADE"))
     crew_id = Column(Integer, ForeignKey("crew.id", ondelete="CASCADE"))
+    piratefleet_id = Column(Integer, ForeignKey("piratefleet.id", ondelete="CASCADE"))
+
 
 # Place of origin
 

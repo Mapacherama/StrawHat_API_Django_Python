@@ -13,6 +13,7 @@ type characterType {
   birthday: String!
   origin: originType
   crew: crewType
+  piratefleet: piratefleetType
 }
 
 type originType {
