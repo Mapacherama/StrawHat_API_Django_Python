@@ -17,8 +17,6 @@ def create_character_resolver(obj, _info, **kwargs):
 def update_character_resolver(obj, _info, **kwargs):
     errors = []
     character = OnePieceCharacter.query.get(kwargs["id"])
-    print(character.isalive)
-    print(kwargs)
     if not character:
         return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
     #Look at the variable names of the dictionary ea in the kwargs dictionary.
