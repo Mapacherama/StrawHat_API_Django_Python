@@ -9,7 +9,6 @@ from api.schema import schema
 def graphql_playground():
     return PLAYGROUND_HTML, 200
 
-
 @app.route("/graphql", methods=["POST"])
 def graphql_server():
     data = request.get_json()

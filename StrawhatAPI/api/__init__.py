@@ -2,17 +2,31 @@ from flask import Flask
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+
 from flask import Flask
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 app = Flask(__name__)
 CORS(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://tesselj2:tquaJgBKa1Ow0t5L@oege.ie.hva.nl/ztesselj2"
+DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_USER = os.environ.get("DATABASE_USER")
+DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD")
+DATABASE_NAME = os.environ.get("DATABASE_NAME")
+DATABASE_ENGINE = os.environ.get("DATABASE_ENGINE")
+SERVER_NAME = os.environ.get("SERVER_NAME")
+
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_ENGINE + DATABASE_USER + ":" + DATABASE_PASSWORD + DATABASE_URL + DATABASE_NAME
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
+
 
 from api.routes import *
 from api.models import *

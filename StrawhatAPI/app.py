@@ -25,3 +25,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_ENGINE + DATABASE_USER + ":" + 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
+
+from api.routes import *
+from api.models import *
