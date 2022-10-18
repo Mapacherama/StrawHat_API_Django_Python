@@ -41,3 +41,17 @@ type piratefleetType {
   totalbounty: Int!
   character_id: Int
 }
+
+type devilfruitType {
+  id: ID!
+  name: String!
+  meaning: String!
+  typeof: TypeOfDevilFruitEnum!
+  character_id: Int
+}
+
+enum TypeOfDevilFruitEnum {
+    paramecia
+    zoan
+    logia
+}

@@ -55,3 +55,17 @@ type MultiplePiratefleetsResult {
   piratefleets: [piratefleetType]
 }
 
+# Devilfruit
+
+type SingleDevilfruitResult {
+  status: Boolean!
+  errors: [String]!
+  piratefleet: devilfruitType
+}
+
+type MultipleDevilfruitsResult {
+  status: Boolean!
+  errors: [String]
+  piratefleets: [devilfruitType]
+}
+

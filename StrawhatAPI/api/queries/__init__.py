@@ -16,4 +16,7 @@ query.set_field("getMultipleCrews", crew.listCrews_resolver)
 query.set_field("getSinglePiratefleet", piratefleet.getSinglePiratefleet_resolver)
 query.set_field("getMultiplePiratefleets", piratefleet.listPiratefleets_resolver)
 
+query.set_field("getSingleDevilfruit", devilfruit.getSingleDevilfruit_resolver)
+query.set_field("getMultipleDevilfruits", devilfruit.listDevilfruits_resolver)
+
 

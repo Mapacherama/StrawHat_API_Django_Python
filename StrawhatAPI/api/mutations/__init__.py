@@ -1,6 +1,6 @@
 from ariadne import ObjectType
 
-from . import characters, origin, crew, piratefleet
+from . import characters, origin, crew, piratefleet, devilfruit
 
 mutation = ObjectType("Mutation")
 
@@ -27,6 +27,11 @@ mutation.set_field("addPiratefleet", piratefleet.create_piratefleet_resolver)
 mutation.set_field("updatePiratefleet", piratefleet.update_piratefleet_resolver)
 mutation.set_field("deletePiratefleet", piratefleet.delete_piratefleet_resolver)
 
+# Devil Fruit
+
+mutation.set_field("addDevilfruit", devilfruit.create_devilfruit_resolver)
+mutation.set_field("updateDevilfruit", devilfruit.update_devilfruit_resolver)
+mutation.set_field("deleteDevilfruit", devilfruit.delete_devilfruit_resolver)
 
 
 

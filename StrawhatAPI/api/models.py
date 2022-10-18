@@ -1,5 +1,7 @@
 from api import db
 
+from enum import Enum
+
 from sqlalchemy import Column, Integer, String, Boolean, Date, ForeignKey
 
 class BaseMixin(db.Model):
@@ -66,8 +68,18 @@ class piratefleet(BaseMixin):
     totalbounty = Column(Integer)
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
+class devilfruit(BaseMixin):
+    __tablename__ = "devilfruit"
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+    meaning = Column(String(255))
+    typeofdevilfruit = Column(Enum(devilfruittype))
+    character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
-
+class devilfruittype(Enum):
+    paramecia = 1
+    zoan = 2
+    logia = 3
 
 
 

@@ -84,4 +84,20 @@ type Mutation {
     character_id: Int
   ): SinglePiratefleetResult!
   deletePiratefleet(id: ID): SinglePiratefleetResult!
+
+  addDevilfruit(
+    name: String!
+    meaning: String!
+    typeof: TypeOfDevilFruitEnum!
+    character_id: Int
+  ): SingleDevilfruitResult!
+
+  updateDevilfruit(
+    id: ID!
+    name: String!
+    meaning: String!
+    typeof: TypeOfDevilFruitEnum!
+    character_id: Int
+  ): SingleDevilfruitResult!
+  deleteDevilfruit(id: ID): SingleDevilfruitResult!
 }
