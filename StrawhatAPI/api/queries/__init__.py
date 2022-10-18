@@ -1,6 +1,6 @@
 from ariadne import ObjectType
 
-from . import characters, origin, crew, piratefleet
+from . import characters, origin, crew, piratefleet, devilfruit
 
 query = ObjectType("Query")
 

@@ -25,11 +25,3 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_ENGINE + DATABASE_USER + ":" + 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
-class ProductionConfig(Config):
-    pass
-
-class DevelopmentConfig(Config):
-    DEBUG = True
-
-class TestingConfig(Config):
-    TESTING = True
