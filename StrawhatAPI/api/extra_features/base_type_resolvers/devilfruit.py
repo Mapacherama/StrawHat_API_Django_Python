@@ -6,11 +6,12 @@ def resolve_devilfruit_id(devilfruit_obj: devilfruit, _info):
 def resolve_devilfruit_name(devilfruit_obj: devilfruit, _info) -> str:
     return devilfruit_obj.name
 
-def resolve_devilfruit_haskingdom(devilfruit_obj: devilfruit, _info) -> str:
+def resolve_devilfruit_meaning(devilfruit_obj: devilfruit, _info) -> str:
     return devilfruit_obj.meaning
 
-def resolve_devilfruit_haskingdom(devilfruit_obj: devilfruit, _info) -> str:
-    return devilfruit_obj.typeof
+def resolve_devilfruit_typeof(devilfruit_obj: devilfruit, _info) -> devilfruittype:
+    print("this is the devilfruittype " + devilfruittype.value)
+    return devilfruit_obj.typeofdevilfruit.value
 
 def resolve_devilfruit_character_id(devilfruit_obj: devilfruit, _info)-> int:
     return devilfruit_obj.character_id

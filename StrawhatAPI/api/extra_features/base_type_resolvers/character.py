@@ -50,11 +50,11 @@ def resolve_character_piratefleet(character_obj: OnePieceCharacter, _info) -> pi
 
 def resolve_character_devilfruit(character_obj: OnePieceCharacter, _info) -> devilfruit:
     Devilfruit = db.session.query(devilfruit).filter(devilfruit.id == character_obj.devilfruit_id).first()
-
+    print(Devilfruit)
     return Devilfruit
 
 def resolve_character_image(character_obj: OnePieceCharacter, _info) -> str:
-    character_image = "http://127.0.0.1:5000/graphql/character/avatar/" + character_obj.id + ".jpeg"
+    character_image = "http://127.0.0.1:5000/graphql/character/avatar/" + str(character_obj.id) + ".jpeg"
 
     return character_image
 

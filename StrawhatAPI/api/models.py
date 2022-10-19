@@ -34,7 +34,7 @@ class OnePieceCharacter(BaseMixin):
     age = Column(Integer)
     height = Column(Integer)
     birthday = Column(Date)
-    image = Column(String)
+    image = Column(String(255))
     origin_id = Column(Integer, ForeignKey("origin.id", ondelete="CASCADE"))
     crew_id = Column(Integer, ForeignKey("crew.id", ondelete="CASCADE"))
     piratefleet_id = Column(Integer, ForeignKey("piratefleet.id", ondelete="CASCADE"))

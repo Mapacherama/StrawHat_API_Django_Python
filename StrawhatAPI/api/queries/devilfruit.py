@@ -14,4 +14,4 @@ def listDevilfruits_resolver(obj, info):
 @convert_kwargs_to_snake_case
 def getSingleDevilfruit_resolver(obj, info, **kwargs):
     Devilfruit = db.session.query(devilfruit).get(kwargs["id"])
-    return create_result(devilfruit = devilfruit)
+    return create_result(devilfruit = Devilfruit)

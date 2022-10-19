@@ -53,8 +53,8 @@ devilfruit_type = ObjectType("devilfruitType")
 
 devilfruit_type.set_field("id", devilfruit.resolve_devilfruit_id)
 devilfruit_type.set_field("name", devilfruit.resolve_devilfruit_name)
-devilfruit_type.set_field("meaning", devilfruit.resolve_devilfruit_haskingdom)
-devilfruit_type.set_field("type", devilfruit.resolve_devilfruit_haskingdom)
+devilfruit_type.set_field("meaning", devilfruit.resolve_devilfruit_meaning)
+devilfruit_type.set_field("typeof", devilfruit.resolve_devilfruit_typeof)
 devilfruit_type.set_field("character_id", devilfruit.resolve_devilfruit_character_id)
 
 

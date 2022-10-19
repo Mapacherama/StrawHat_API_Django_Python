@@ -11,6 +11,7 @@ type characterType {
   age: Int!
   height: Int!
   birthday: String!
+  image: String!
   origin: originType
   crew: crewType
   piratefleet: piratefleetType
