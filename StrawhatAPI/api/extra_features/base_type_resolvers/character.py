@@ -53,6 +53,11 @@ def resolve_character_devilfruit(character_obj: OnePieceCharacter, _info) -> dev
 
     return Devilfruit
 
+def resolve_character_image(character_obj: OnePieceCharacter, _info) -> str:
+    character_image = "http://127.0.0.1:5000/graphql/character/avatar/" + character_obj.id + ".jpeg"
+
+    return character_image
+
 
 
 
