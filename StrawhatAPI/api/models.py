@@ -71,9 +71,9 @@ class piratefleet(BaseMixin):
     character_id = Column(Integer, ForeignKey("character.id", ondelete="CASCADE"))
 
 class devilfruittype(enum.Enum):
-    paramecia = 1
-    zoan = 2
-    logia = 3
+    paramecia = "paramecia"
+    zoan = "zoan"
+    logia = "logia"
 
 class devilfruit(BaseMixin):
     __tablename__ = "devilfruit"

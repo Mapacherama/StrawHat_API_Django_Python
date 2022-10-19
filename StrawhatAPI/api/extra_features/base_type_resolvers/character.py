@@ -50,7 +50,7 @@ def resolve_character_piratefleet(character_obj: OnePieceCharacter, _info) -> pi
 
 def resolve_character_devilfruit(character_obj: OnePieceCharacter, _info) -> devilfruit:
     Devilfruit = db.session.query(devilfruit).filter(devilfruit.id == character_obj.devilfruit_id).first()
-    print(Devilfruit)
+    Devilfruit.typeof = Devilfruit.typeofdevilfruit.value
     return Devilfruit
 
 def resolve_character_image(character_obj: OnePieceCharacter, _info) -> str:
