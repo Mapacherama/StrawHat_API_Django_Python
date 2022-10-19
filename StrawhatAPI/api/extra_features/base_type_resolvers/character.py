@@ -1,5 +1,5 @@
 from api import db
-from api.models import OnePieceCharacter, origin, crew, piratefleet
+from api.models import OnePieceCharacter, origin, crew, piratefleet, devilfruit
 
 def resolve_character_id(character_obj: OnePieceCharacter, _info) -> int:
     return character_obj.id
@@ -46,6 +46,12 @@ def resolve_character_piratefleet(character_obj: OnePieceCharacter, _info) -> pi
     Piratefleet = db.session.query(piratefleet).filter(piratefleet.id == character_obj.piratefleet_id).first()
     
     return Piratefleet
+
+
+def resolve_character_devilfruit(character_obj: OnePieceCharacter, _info) -> devilfruit:
+    Devilfruit = db.session.query(devilfruit).filter(devilfruit.id == character_obj.devilfruit_id).first()
+
+    return Devilfruit
 
 
 

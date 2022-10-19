@@ -14,6 +14,7 @@ type characterType {
   origin: originType
   crew: crewType
   piratefleet: piratefleetType
+  devilfruit: devilfruitType
 }
 
 type originType {

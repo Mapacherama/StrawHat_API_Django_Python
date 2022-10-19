@@ -19,6 +19,7 @@ character_type.set_field("birthday",  character.resolve_character_birthday)
 character_type.set_field("origin",  character.resolve_character_origin)
 character_type.set_field("crew",  character.resolve_character_crew)
 character_type.set_field("piratefleet",  character.resolve_character_piratefleet)
+character_type.set_field("devilfruit",  character.resolve_character_devilfruit)
 
 
 origin_type = ObjectType("originType")

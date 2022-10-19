@@ -13,6 +13,8 @@ type Mutation {
     birthDay: String!
     origin_id: Int
     crew_id: Int
+    piratefleet_id: Int
+    devilfruit_id: Int
   ): OnePieceCharacterResult!
 
   updateCharacter (
@@ -30,6 +32,8 @@ type Mutation {
     birthDay: String!
     origin_id: Int
     crew_id: Int
+    piratefleet_id: Int
+    devilfruit_id: Int
   ): OnePieceCharacterResult!
   deleteCharacter(id: ID): OnePieceCharacterResult!
 
