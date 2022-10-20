@@ -34,7 +34,7 @@ Execute the command ` cd StrawhatAPI ` and after that  ` flask run ` remember to
 input of your application. visit `http://localhost:5000/graphql `. In the [GraphQL playground](https://github.com/graphql/graphql-playground/releases/tag/v1.8.10) of choice (I prefer the client myself).
 
 # Simple query example
-`
+```GraphQL
 query{
   getSingleCharacter(id:"1"){
     character{
@@ -43,6 +43,6 @@ query{
     }
   }
 }
-`
+```
 
 
