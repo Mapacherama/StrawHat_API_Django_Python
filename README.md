@@ -1,4 +1,4 @@
-# StrawHat API. Made possible with GraphQL, SQLAlchemy, Flask & Python
+# StrawHat GraphQL API.
 
 ![](https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/One_Piece_Logo.svg/800px-One_Piece_Logo.svg.png)
 
@@ -16,6 +16,7 @@ gain more knowledge about the incredible world Oda has created!
 - Flask
 - SQLAlchemy
 - Ariadne
+- GraphQL
 - Pytest
 
 ## Good to know
