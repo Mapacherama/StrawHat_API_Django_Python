@@ -26,7 +26,6 @@ class OnePieceCharacter(BaseMixin):
     bloodtype = Column(db.String(255))
     occupation = Column(String(255))
     nickname = Column(String(255))
-    devilfruit = Column(String(255))
     isalive = Column(Boolean)
     hasdevilFruit = Column(Boolean)
     ispartOffleet = Column(Boolean)
