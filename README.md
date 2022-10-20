@@ -20,13 +20,11 @@ gain more knowledge about the incredible world Oda has created!
 
 ## Good to know
 
-## Step 1: Getting started
+### Getting started
 
 Create a virtual environment using virtualenv or conda and then run the command ` pip install -r requirements.txt` or ` pip3 install -r requirements.txt ` to install the dependencies.
 
-Make sure to run the activate file in the environment
-
-
+Make sure to run the activate file in the environment folder!
 
 # Run Graphql playground
 
