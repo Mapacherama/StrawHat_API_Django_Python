@@ -33,4 +33,4 @@ def delete_piratefleet_resolver(obj, info, **kwargs):
     db.session.delete(Piratefleet)
     db.session.commit()
 
-    return create_result(Piratefleet)
+    return create_result()

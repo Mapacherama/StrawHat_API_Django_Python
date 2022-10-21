@@ -9,7 +9,7 @@ def create_crew_resolver(obj, _info, **kwargs):
     db.session.add(Crew)
     db.session.commit()
 
-    return create_result(Crew)
+    return create_result(crew = Crew)
 
 @convert_kwargs_to_snake_case
 def update_crew_resolver(obj, _info, **kwargs):

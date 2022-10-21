@@ -42,7 +42,7 @@ type Mutation {
   addOrigin(
     name: String!
     hasKingdom: Boolean!
-    character_id: Int!
+    character_id: Int
   ): SingleOriginResult!
 
   updateOrigin(

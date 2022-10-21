@@ -10,7 +10,7 @@ def create_devilfruit_resolver(obj, info, **kwargs):
     db.session.add(Devilfruit)
     db.session.commit()
 
-    return create_result(status=self_status, errors = errors, origin = Origin)
+    return create_result(status=self_status, errors = errors, devilfruit = Devilfruit)
 
 @convert_kwargs_to_snake_case
 def update_devilfruit_resolver(obj, info, **kwargs):

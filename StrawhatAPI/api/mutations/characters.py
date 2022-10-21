@@ -18,8 +18,7 @@ def update_character_resolver(obj, _info, **kwargs):
     errors = []
     character = OnePieceCharacter.query.get(kwargs["id"])
     if not character:
-        return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])
-    #Look at the variable names of the dictionary ea in the kwargs dictionary.
+        return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])    
     if kwargs.get("hasdevil_fruit"):
         character.hasdevilFruit = kwargs["hasdevil_fruit"]
 
@@ -41,4 +40,4 @@ def delete_character_resolver(obj, info, **kwargs):
     db.session.delete(character)
     db.session.commit()
 
-    return create_result(character)
+    return create_result()

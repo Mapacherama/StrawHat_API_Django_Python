@@ -1,13 +1,13 @@
 type characterType {
   id: ID!
   name: String!
-  bloodType: String!
+  bloodtype: String
   occupation: String!
-  nickName: String!
-  isAlive: Boolean!
-  isPartOfFleet: Boolean!
-  hasDevilFruit: Boolean!
-  bounty: Int!
+  nickname: String!
+  isalive: Boolean!
+  hasdevilfruit: Boolean!
+  ispartoffleet: Boolean!
+  bounty: Int
   age: Int!
   height: Int!
   birthday: String!
