@@ -18,7 +18,7 @@ def update_character_resolver(obj, _info, **kwargs):
     errors = []
     character = OnePieceCharacter.query.get(kwargs["id"])
     if not character:
-        return create_result(status=False, errors=[Errors.OBJECT_NOT_FOUND])    
+        return create_result(status=False, errors= [Errors.OBJECT_NOT_FOUND])
     if kwargs.get("hasdevil_fruit"):
         character.hasdevilFruit = kwargs["hasdevil_fruit"]
 

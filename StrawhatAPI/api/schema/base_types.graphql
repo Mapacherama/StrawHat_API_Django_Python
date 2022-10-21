@@ -5,8 +5,8 @@ type characterType {
   occupation: String!
   nickname: String!
   isalive: Boolean!
-  hasdevilfruit: Boolean!
-  ispartoffleet: Boolean!
+  hasdevilFruit: Boolean!
+  ispartOffleet: Boolean!
   bounty: Int
   age: Int!
   height: Int!
