@@ -1,16 +1,16 @@
 type Mutation {
   addCharacter(
     name: String!
-    bloodType: String!
+    bloodtype: String
     occupation: String!
-    nickName: String!
-    isAlive: Boolean!
-    hasDevilFruit: Boolean!
-    isPartOfFleet: Boolean!
-    bounty: Int!
+    nickname: String!
+    isalive: Boolean!
+    hasdevilFruit: Boolean!
+    ispartOffleet: Boolean!
+    bounty: Int
     age: Int!
     height: Int!
-    birthDay: String!
+    birthday: String!
     image: String!
     origin_id: Int
     crew_id: Int
@@ -19,19 +19,19 @@ type Mutation {
   ): OnePieceCharacterResult!
 
   updateCharacter (
-    id: ID!,
-    name: String!
-    bloodType: String!
-    occupation: String!
-    nickName: String!
-    isalive: Boolean!
-    hasdevilFruit: Boolean!
-    ispartOffleet: Boolean!
-    bounty: Int!
-    age: Int!
-    height: Int!
-    birthDay: String!
-    image: String!
+    id: ID!
+    name: String
+    bloodtype: String
+    occupation: String
+    nickname: String
+    isalive: Boolean
+    hasdevilFruit: Boolean
+    ispartOffleet: Boolean
+    bounty: Int
+    age: Int
+    height: Int
+    birthday: String
+    image: String
     origin_id: Int
     crew_id: Int
     piratefleet_id: Int
@@ -47,9 +47,9 @@ type Mutation {
 
   updateOrigin(
     id: ID!
-    name: String!
-    hasKingdom: Boolean!
-    character_id: Int!
+    name: String
+    hasKingdom: Boolean
+    character_id: Int
   ): SingleOriginResult!
   deleteOrigin(id: ID): SingleOriginResult!
 
@@ -58,17 +58,17 @@ type Mutation {
     oceanoforigin: String!
     captain: String!
     mainship: String!
-    totalbounty: Int!
+    totalbounty: Int
     character_id: Int
   ): SingleCrewResult!
 
   updateCrew(
     id: ID!
-    name: String!
-    oceanoforigin: String!
-    captain: String!
-    mainship: String!
-    totalbounty: Int!
+    name: String
+    oceanoforigin: String
+    captain: String
+    mainship: String
+    totalbounty: Int
     character_id: Int
   ): SingleCrewResult!
   deleteCrew(id: ID): SingleCrewResult!
@@ -77,32 +77,32 @@ type Mutation {
     name: String!
     captain: String!
     totalpeople: Int!
-    totalbounty: Int!
+    totalbounty: Int
     character_id: Int
   ): SinglePiratefleetResult!
 
   updatePiratefleet(
     id: ID!
-    name: String!
-    captain: String!
-    totalpeople: Int!
-    totalbounty: Int!
+    name: String
+    captain: String
+    totalpeople: Int
+    totalbounty: Int
     character_id: Int
   ): SinglePiratefleetResult!
   deletePiratefleet(id: ID): SinglePiratefleetResult!
 
   addDevilfruit(
     name: String!
-    meaning: String!
+    meaning: String
     typeof: TypeOfDevilFruitEnum!
     character_id: Int
   ): SingleDevilfruitResult!
 
   updateDevilfruit(
     id: ID!
-    name: String!
-    meaning: String!
-    typeof: TypeOfDevilFruitEnum!
+    name: String
+    meaning: String
+    typeof: TypeOfDevilFruitEnum
     character_id: Int
   ): SingleDevilfruitResult!
   deleteDevilfruit(id: ID): SingleDevilfruitResult!
