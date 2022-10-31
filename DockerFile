@@ -1,6 +1,7 @@
 FROM python:3.10.7
-ADD . /app
-WORKDIR /app
-EXPOSE 4000
+COPY . /StrawHat_API_Django_Python
+WORKDIR /StrawHat_API_Django_Python
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python","app.py"]
+EXPOSE 4040
+ENTRYPOINT ["python"]
+CMD ["StrawhatAPI/app.py"]
