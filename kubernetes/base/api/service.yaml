@@ -4,10 +4,10 @@ metadata:
   name: api
 spec:
   selector:
-    app: api
+    app: flask
   ports:
   - name: api-svc
     protocol: TCP
-    port: 5000
+    port: 80
     targetPort: 5000
-  type: ClusterIP
+  type: LoadBalancer
