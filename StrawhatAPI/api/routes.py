@@ -5,9 +5,11 @@ from ariadne.constants import PLAYGROUND_HTML
 from api import app
 from api.schema import schema
 
+
 @app.route("/graphql", methods=["GET"])
 def graphql_playground():
     return PLAYGROUND_HTML, 200
+
 
 @app.route("/graphql", methods=["POST"])
 def graphql_server():
