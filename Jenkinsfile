@@ -1,9 +1,3 @@
-
-# Jenkins pipeline script in declarative snytax to run bandit on git repo
-# Needs git token added to the jenkins server in credential store
-# Runs the job in a docker so jekins should have docker installed.
-# Need a third-party library called jenkinsci-unstashParam-library to fetch the baseline json uploaded as job parameter.
-
 properties([parameters(
 [string(defaultValue: 'NameofScan', description: 'Use only alphabets, without space', name: 'SCAN_NAME', trim: true), string(defaultValue: 'git@abc.com:test/repo1.git', description: 'Enter the "Clone with SSH" url', name: 'REPO', trim: true),
 string(defaultValue: 'dev', description: 'Select the release branch to run scans for particular release', name: 'Branch', trim: true),
